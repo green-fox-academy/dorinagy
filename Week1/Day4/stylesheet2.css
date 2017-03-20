@@ -1,0 +1,29 @@
+.box {
+  width: 348px;
+  height: 512px;
+  padding: 16px;
+  background-color: rgb(66,133,244);
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  color: rgb(255,255,255);
+}
+.boxes {
+  text-align: center;
+  height: 25%;
+}
+.north {
+  background-color: rgb(230,118,118);
+}
+.east {
+  background-color: rgb(242,240,98);
+}
+.south {
+  background-color: rgb(169,230,230);
+}
+.west {
+  background-color: rgb(118,146,228);
+}
+div.boxes > p {
+  margin: 0;
+  padding-top: 13%;
+}

@@ -1,0 +1,23 @@
+.box {
+  width: 348px;
+  height: 256px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  color: white;
+  border: 16px rgb(66,133,244) solid;
+}
+.north{
+  background-color: rgb(230,118,118);
+  margin-bottom: 5px;
+}
+.south{
+  background-color: rgb(169,230,230);
+}
+.top{
+  margin-top: 48px;
+  margin-bottom: 74px;
+}
+.bottom {
+  margin-bottom: 48px;
+}

@@ -1,0 +1,28 @@
+body {
+  width: 278px;
+}
+p {
+  font-size: 16px;
+  font-family: courier, sans-serif;
+  color: white;
+  padding: 16px 34px;
+  text-align: center;
+  margin: 8px;
+  background-image: url(images/duck.png);
+  background-repeat: no-repeat;
+}
+p:first-child {
+  background-color: rgb(255,99,71);
+  background-position: left center;
+  background-size: 70px;
+}
+p:nth-child(2n+2) {
+  background-color: rgb(100,53,121);
+  background-position: center;
+  background-size: 160px;
+}
+p:last-child {
+  background-color: rgb(128,128,128);
+  background-position: right bottom;
+  background-size: 70px;
+}

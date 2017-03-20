@@ -1,0 +1,15 @@
+body{
+  width: 367px;
+  height: 471px;
+}
+p {
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(0,85,102);
+  background-color: rgb(14,145,161);
+  width: 328px;
+  height: 113px;
+  padding: 22px 0px 0px 17px;
+  border: 5px rgb(125,206,148) solid;
+  margin: 17px;
+}
