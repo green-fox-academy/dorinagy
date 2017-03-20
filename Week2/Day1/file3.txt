@@ -1,1 +1,1 @@
-This is file3 with a content.
+This is file3 with a changed content.
