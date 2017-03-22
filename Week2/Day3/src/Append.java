@@ -7,7 +7,7 @@ public class Append {
     System.out.println(appendA(am));
   }
 
-  public static String appendA(String addA){
+  public static String appendA(String addA) {
     return (addA + "a");
   }
 }
