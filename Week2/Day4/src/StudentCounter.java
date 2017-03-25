@@ -45,6 +45,23 @@ public class StudentCounter {
     row5.put("candies", 2);
     map.add(row5);
 
-    
+    int sumAge = 0;
+    String whoHasMoreCandies = "More than 4 candies: ";
+
+    for (int i = 0; i < map.size(); i++) {
+      int numberOfCandies = (Integer)map.get(i).get("candies");
+      Double ageOfChildren = new Double(map.get(i).get("age").toString());
+
+      if(numberOfCandies > 4) {
+        Object name = map.get(i).get("name");
+        String nameToString = name.toString();
+        whoHasMoreCandies += nameToString + " ";
+      }
+      if (numberOfCandies < 5) {
+        sumAge += ageOfChildren;
+      }
+    }
+    System.out.println(whoHasMoreCandies);
+    System.out.println("Sum of ages who has less then 5 candies: " + sumAge);
   }
 }
