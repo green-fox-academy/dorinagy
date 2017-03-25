@@ -14,8 +14,8 @@ public class Calculator {
 
     String[] inputParts = userInput.split(" ");
 
-    int operand1 = Integer.parseInt(inputParts[2]);
-    int operand2 = Integer.parseInt(inputParts[3]);
+    int operand1 = Integer.parseInt(inputParts[1]);
+    int operand2 = Integer.parseInt(inputParts[2]);
 
     if (userInput.contains("+")) {
       System.out.println("The answer is: " + (operand1 + operand2));
