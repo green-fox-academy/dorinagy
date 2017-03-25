@@ -13,18 +13,28 @@ public class GuessMyNumber {
     Random randomNumber = new Random();
     int myNumber = randomNumber.nextInt(max - min) + min;
     //System.out.println(myNumber);
+    int livesRemaining = 5;
 
-    System.out.println("Now try to guess it!");
-
+    System.out.println("Now try to guess it! You have 5 lives.");
     int guessedNumber = scanner.nextInt();
-    while(guessedNumber != myNumber) {
-      if (guessedNumber > myNumber) {
-        System.out.println("Too high. Guess again.");
-      } else {
-        System.out.println("Too low. Guess again.");
+    boolean guess = false;
+
+      while(guess == false && livesRemaining > 1) {
+        if(guessedNumber > myNumber) {
+          livesRemaining -= 1;
+        System.out.println("Too high. You have " + livesRemaining + " lives left.");
+        } else if(guessedNumber < myNumber){
+          livesRemaining -= 1;
+          System.out.println("Too low. You have " + livesRemaining + " lives left.");
+          } else if (guessedNumber == myNumber) {
+            System.out.println("Congratulations. You won");
+            guess = true;
+        }
+        guessedNumber = scanner.nextInt();
       }
-      guessedNumber = scanner.nextInt();
+      if (livesRemaining == 1) {
+      System.out.println("You died.");
     }
-    System.out.println("Congratulations. You won");
   }
 }
+
