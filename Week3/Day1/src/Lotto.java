@@ -37,9 +37,26 @@ public class Lotto {
 
       Collections.sort(lottoNumbers);
 
-
       System.out.println(lottoNumbers);
 
+      int count = 0;
+      Object number = 0;
+      int tempCount = 0;
+      for (int y = 0; y < 5; y++) {
+        for (int x = 0; x < lottoNumbers.size(); x++) {
+          Object tempNumber = lottoNumbers.get(x);
+          for (int z = 0; z < lottoNumbers.size(); z++) {
+            if (lottoNumbers.get(z).equals(tempNumber)) {
+              tempCount = tempCount + 1;
+            }
+            if (tempCount > count) {
+              number = tempNumber;
+              count = tempCount;
+            }
+          }
+        }
+        System.out.println(number);
+      }
 
     } catch (Exception ex) {
       System.out.println("Error" + ex.getClass());
