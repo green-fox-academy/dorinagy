@@ -13,7 +13,11 @@ public class ReversedLines {
       List<String> lines = Files.readAllLines(filePath);
       String string = lines.toString();
 
-      System.out.println(string);
+      String reverse = "";
+      for(int i = string.length() - 1; i >= 0; i--) {
+        reverse = reverse + string.charAt(i);
+      }
+      System.out.println(reverse);
 
     } catch (Exception e) {
       System.out.println("Error " + e.getClass());
