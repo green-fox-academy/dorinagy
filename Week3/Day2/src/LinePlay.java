@@ -6,11 +6,27 @@ import java.awt.*;
  */
 public class LinePlay {
   public static void mainDraw(Graphics graphics){
-    for (int x = 0; x <= 300; x += 20) {
-      graphics.drawLine(x,0,300,300);
+    int x1 = 0;
+    int y1 = 0;
+    int x2 = 300;
+    int y2 = 0;
+    for (int i = 0; i < 15; i++) {
+      graphics.setColor(Color.CYAN);
+      graphics.drawLine(x1, y1, x2, y2);
+      x1 += 20;
+      y2 += 20;
     }
+    x1 = 0;
+    y1 = 0;
+    x2 = 0;
+    y2 = 300;
 
-
+    for (int i = 0; i < 15; i++) {
+    graphics.setColor(Color.DARK_GRAY);
+    graphics.drawLine(x1, y1, x2, y2);
+    y1 += 20;
+    x2 += 20;
+    }
   }
 
   public static void main(String[] args) {
