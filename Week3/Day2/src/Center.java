@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Center {
   public static void mainDraw(Graphics graphics){
 
-    //System.out.println("Give me two parameters!");
-    //drawLines(graphics);
+    System.out.println("Give me two parameters!");
+    drawLines(graphics);
 
     for (int x = 0; x <= 300; x += 20) {
       graphics.drawLine(x,0,150,150);
