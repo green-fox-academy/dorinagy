@@ -29,16 +29,28 @@ public class LinePlayQuarters {
       x2 += 20;
     }
 
-    x1 = 150;
+    x1 = 300;
     y1 = 150;
-    x2 = 150;
+    x2 = 300;
     y2 = 300;
 
     for (int i = 0; i < 7.5; i++) {
-      graphics.setColor(Color.DARK_GRAY);
+      graphics.setColor(Color.RED);
       graphics.drawLine(x1, y1, x2, y2);
       y1 += 20;
-      x2 += 20;
+      x2 -= 20;
+    }
+
+    x1 = 150;
+    y1 = 0;
+    x2 = 0;
+    y2 = 0;
+
+    for (int i = 0; i < 7.5; i++) {
+      graphics.setColor(Color.GREEN);
+      graphics.drawLine(x1, y1, x2, y2);
+      y2 += 20;
+      x1 -= 20;
     }
 
   }
@@ -55,7 +67,6 @@ public class LinePlayQuarters {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
 }
