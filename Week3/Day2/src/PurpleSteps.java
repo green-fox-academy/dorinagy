@@ -8,9 +8,11 @@ public class PurpleSteps {
   public static void mainDraw(Graphics graphics){
 
     for (int i = 10; i < 190; i +=10) {
-      int size = 10;
-      graphics.setColor(new Color(153, 58, 164));
-      graphics.fillRect(i, i, size, size);
+        int size = 10;
+        graphics.setColor(new Color(153, 58, 164));
+        graphics.fillRect(i, i, size, size);
+        graphics.setColor(Color.black);
+        graphics.drawRect(i, i, size, size);
     }
 
   }
