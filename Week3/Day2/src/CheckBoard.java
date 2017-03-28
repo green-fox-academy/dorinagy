@@ -11,13 +11,24 @@ public class CheckBoard {
   public static void mainDraw(Graphics graphics){
     int x = 0;
     int y = 0;
-    for (int row = 0; row < 8; row++)
-      for (int col = 0; col < 8; col++) {
-       if (col % 2 == 0) {
-         graphics.setColor(Color.black);
-         graphics.fillRect(x, y, 20,20);
-         x += 40;
-       }
+    for (int row = 0; row < 16; row++) {
+      if (row % 2 == 0) {
+        for (int col = 0; col < 8; col++) {
+           graphics.setColor(Color.black);
+           graphics.fillRect(x, y, 20,20);
+           x += 40;
+         }
+         x = 0;
+         y += 20;
+      } else {
+        for (int col = 0; col < 8; col++) {
+          graphics.setColor(Color.black);
+          graphics.fillRect(x + 20, y, 20,20);
+          x += 40;
+        }
+        x = 0;
+        y += 20;
+      }
     }
   }
   public static void main(String[] args) {
