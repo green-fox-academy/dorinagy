@@ -7,8 +7,14 @@ import java.awt.*;
 public class Drawing2 {
   public static void mainDraw(Graphics graphics){
     // draw a box that has different colored lines on each edge.
-
-
+    graphics.setColor(Color.BLUE);
+    graphics.drawLine(10,10, 60,10);
+    graphics.setColor(Color.GREEN);
+    graphics.drawLine(60,10,60,30);
+    graphics.setColor(Color.ORANGE);
+    graphics.drawLine(60,30,10,30);
+    graphics.setColor(Color.RED);
+    graphics.drawLine(10,30,10,10);
 
   }
   public static void main(String[] args) {
