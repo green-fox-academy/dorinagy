@@ -20,7 +20,7 @@ public class CenteredBoxes {
     Scanner scanner = new Scanner(System.in);
     int size = scanner.nextInt();
     drawSquare.setColor(Color.BLUE);
-    drawSquare.drawRect(150, 150, size, size);
+    drawSquare.drawRect((150 - (size / 2)), (150 - (size / 2)), size, size);
 
   }
   public static void main(String[] args) {
