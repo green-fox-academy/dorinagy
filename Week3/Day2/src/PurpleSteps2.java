@@ -6,15 +6,16 @@ import java.awt.*;
  */
 public class PurpleSteps2 {
   public static void mainDraw(Graphics graphics){
-
-    for (int i = 10; i < 300; i *=2) {
-      for (int size = 10; size > 80; size *=2){
-      graphics.setColor(new Color(153, 58, 164));
-      graphics.fillRect(i, i, size, size);
+    int size = 10;
+      for (int i = 10; i < 200; i += size - 10) {
+        graphics.setColor(new Color(153, 58, 164));
+        graphics.fillRect(i, i, size, size);
+        graphics.setColor(Color.black);
+        graphics.drawRect(i, i, size, size);
+        size += 10;
       }
-    }
-
   }
+
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
     jFrame.setSize(new Dimension(300, 300));
