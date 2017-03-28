@@ -13,12 +13,16 @@ public class ConnectDots {
     // connect these to get a box: {{10, 10}, {290,  10}, {290, 290}, {10, 290}}
     // connect these: {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
     // {120, 100}, {85, 130}, {50, 100}}
-
+    System.out.println("Type in two points!");
+    Scanner scanner = new Scanner(System.in);
+    int x = scanner.nextInt();
+    int y = scanner.nextInt();
+    int[] inputArray = new int[]{x,y};
+    connectDots(inputArray);
 
   }
-  public static void connectDots(Graphics connect) {
-    Scanner scanner = new Scanner(System.in);
-
+  public static void connectDots(int[] input) {
+    
 
   }
 
