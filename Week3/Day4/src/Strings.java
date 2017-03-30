@@ -14,8 +14,10 @@ public class Strings {
 
   public static String replaceChar(String str) {
     if (str.contains("x")) {
-      String newStr = str.replace("x", "y");
-      return replaceChar(newStr);
+      String firstPart = str.substring(0, str.indexOf("x"));
+      String secondPart = str.substring(str.indexOf("x") + 1);
+      str = firstPart + "y" + secondPart;
+      return replaceChar(str);
     } else {
       return str;
     }
