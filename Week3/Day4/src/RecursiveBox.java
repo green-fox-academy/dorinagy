@@ -6,17 +6,24 @@ import java.awt.*;
  */
 public class RecursiveBox {
   public static void mainDraw(Graphics graphics) {
+    drawBox(graphics);
     drawLines(graphics);
 
   }
 
+  public static void drawBox(Graphics drawBox) {
+    drawBox.setColor(Color.yellow);
+    drawBox.fillRect(0, 0, 600, 600);
+    drawBox.setColor(Color.black);
+    drawBox.drawRect(0, 0, 600, 600);
+  }
+
   public static void drawLines(Graphics drawLine) {
-    drawLine.setColor(Color.yellow);
-    drawLine.fillRect(0, 0, 600, 600);
     drawLine.setColor(Color.black);
-    drawLine.drawRect(0, 0, 600, 600);
-
-
+    drawLine.drawLine(200, 0, 200, 600);
+    drawLine.drawLine(400, 0, 400, 600);
+    drawLine.drawLine(0, 200, 600, 200);
+    drawLine.drawLine(0, 400, 600, 400);
   }
 
   public static void main(String[] args) {
