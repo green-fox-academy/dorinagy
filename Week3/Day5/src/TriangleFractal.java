@@ -11,19 +11,22 @@ public class TriangleFractal {
 
   public static void drawTriangle(Graphics triangle, int x, int y, int l, int h) {
     int xpoints[] = {x, x - l, x + l};
-    int ypoints[] = {y, y - 2*h, y - 2*h};
+    int ypoints[] = {y, y - 2 * h, y - 2 * h};
     int npoints = 3;
     triangle.drawPolygon(xpoints, ypoints, npoints);
   }
 
   public static void fractals(Graphics graphics, int x, int y, int l, int h) {
-    if(l < 3) {
+    if (l < 3) {
       return;
     } else {
-        drawTriangle(graphics, x, y, l, h);
-        fractals(graphics, x, y, l / 2, h / 2);
-        fractals(graphics, x - (l/2), y - h, l / 2, h / 2);
-        fractals(graphics, x + (l/2), y - h, l / 2, h / 2);
+      drawTriangle(graphics, x, y, l, h);
+      graphics.setColor(Color.GREEN);
+      fractals(graphics, x, y, l / 2, h / 2);
+      graphics.setColor(Color.ORANGE);
+      fractals(graphics, x - (l / 2), y - h, l / 2, h / 2);
+      graphics.setColor(Color.red);
+      fractals(graphics, x + (l / 2), y - h, l / 2, h / 2);
     }
   }
 
@@ -36,7 +39,7 @@ public class TriangleFractal {
     jFrame.setVisible(true);
   }
 
-  static class ImagePanel extends JPanel{
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
