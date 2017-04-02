@@ -8,32 +8,30 @@ import java.util.Scanner;
  */
 public class RainbowBoxes {
   public static void mainDraw(Graphics graphics){
-    // create a loop that fills the canvas with rainbow colored squares.
     System.out.println("Give me the square's size and 3 numbers between 0 and 255 to the color (rgb(0, 145, 173))");
-    drawSquares(graphics);
-
-    int x, y;
-    Random r = new Random();
-    x = r.nextInt(640);
-    y = r.nextInt(480);
-    graphics.setColor(Color.GREEN);
-    graphics.fillRect(x, y, 30, 30);
-
-  }
-
-  public static void drawSquares(Graphics drawSquare) {
     Scanner scanner = new Scanner(System.in);
     int size = scanner.nextInt();
     int r = scanner.nextInt();
     int g = scanner.nextInt();
     int b = scanner.nextInt();
-    drawSquare.setColor(new Color(r, g, b));
-    drawSquare.drawRect((150 - (size / 2)), (150 - (size / 2)), size, size);
+    int y = 300;
+    for (int i = 300; i < size;) {
+      Random rand = new Random();
+      int n = rand.nextInt(255);
+      int n1 = rand.nextInt(255);
+      int n2 = rand.nextInt(255);
+      graphics.setColor(new Color(n,n1,n2));
+      graphics.fillRect(300-i, 300-i, y, y);
+      i = i -10;
+      y = y - (2*10);
+    }
+    graphics.setColor(new Color(r, g, b));
+    graphics.fillRect((150 - (size / 2)), (150 - (size / 2)), size, size);
   }
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
-    jFrame.setSize(new Dimension(300, 300));
+    jFrame.setSize(new Dimension(320, 340));
     jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     jFrame.add(new ImagePanel());
     jFrame.setLocationRelativeTo(null);
