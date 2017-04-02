@@ -10,8 +10,8 @@ public class EnvelopeStar {
     int y1 = 0;
     int x2 = 150;
     int y2 = 150;
+    graphics.setColor(Color.GREEN);
     for (int i = 0; i < 15; i++) {
-      graphics.setColor(Color.GREEN);
       graphics.drawLine(x1, y1, x2, y2);
       x2 += 10;
       y1 += 10;
@@ -22,32 +22,29 @@ public class EnvelopeStar {
     x2 = 150;
     y2 = 150;
     for (int i = 0; i < 15; i++) {
-      graphics.setColor(Color.GREEN);
       graphics.drawLine(x1, y1, x2, y2);
       x2 -= 10;
       y1 += 10;
     }
 
-    x1 = 300;
-    y1 = 150;
+    x1 = 150;
+    y1 = 300;
     x2 = 150;
     y2 = 150;
     for (int i = 0; i < 15; i++) {
-      graphics.setColor(Color.GREEN);
       graphics.drawLine(x1, y1, x2, y2);
-      x1 -= 10;
-      y2 += 10;
+      x2 += 10;
+      y1 -= 10;
     }
 
-    x1 = 0;
-    y1 = 150;
+    x1 = 150;
+    y1 = 300;
     x2 = 150;
     y2 = 150;
     for (int i = 0; i < 15; i++) {
-      graphics.setColor(Color.GREEN);
       graphics.drawLine(x1, y1, x2, y2);
-      x1 += 10;
-      y2 += 10;
+      x2 -= 10;
+      y1 -= 10;
     }
 
   }
