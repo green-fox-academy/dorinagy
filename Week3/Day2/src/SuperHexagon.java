@@ -7,5 +7,5 @@ public class SuperHexagon {
   public static void mainDraw(Graphics graphics) {
 
   }
-  
+
 }
