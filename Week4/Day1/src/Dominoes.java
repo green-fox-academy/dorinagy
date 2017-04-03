@@ -7,11 +7,17 @@ import java.util.List;
 public class Dominoes {
   public static void main(String[] args) {
     List<Domino> dominoes = initializeDominoes();
-    
+    Domino tempDomino = new Domino(0,0);
+
     for(int i = 0; i < dominoes.size(); i++) {
-
+      for(int j = i; j < dominoes.size(); j++) {
+        if(dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
+          tempDomino = dominoes.get(i + 1);
+          dominoes.set(i + 1, dominoes.get(j));
+          dominoes.set(j, tempDomino);
+        }
+      }
     }
-
     System.out.println(dominoes);
   }
 
