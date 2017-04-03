@@ -8,9 +8,6 @@ public class SharpieSet {
 
   public SharpieSet() {
     this.sharpies = new ArrayList<>();
-  }
-
-  public void add() {
     sharpies.add(new Sharpie("blue", 2));
     sharpies.add(new Sharpie("pink", 6));
     sharpies.add(new Sharpie("black", 5));
@@ -28,19 +25,20 @@ public class SharpieSet {
   }
 
     public void removeTrash() {
-      for(int i = 0; i <sharpies.size(); i++) {
+      for(int i = 0; i < sharpies.size();){
         if(sharpies.get(i).inkAmount == 0) {
-          sharpies.remove(i);
-        }
+            sharpies.remove(i);
+          } else {
+              i++;
+            }
       }
     }
 
   public static void main(String[] args) {
     SharpieSet sharpieSet = new SharpieSet();
-    sharpieSet.add();
     sharpieSet.countUseable();
-    sharpieSet.removeTrash();
     System.out.println(sharpieSet.countUseable());
+    sharpieSet.removeTrash();
     System.out.println(sharpieSet.sharpies);
   }
 }

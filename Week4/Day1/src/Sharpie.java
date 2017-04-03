@@ -17,11 +17,11 @@ public class Sharpie {
   public Sharpie(String color, float width) {
     this.color = color;
     this.width = width;
-    inkAmount = 40;
+    inkAmount = 0;
   }
 
   public void use() {
-    inkAmount -= 1;
+    inkAmount--;
   }
 
   public static void main(String[] args) {
