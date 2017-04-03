@@ -9,7 +9,11 @@ public class Student {
   int skippedDays;
 
   public Student(String name, int age, String gender, String previousOrganization) {
-    skippedDays = 0;
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.previousOrganization = previousOrganization;
+    this.skippedDays = 0;
   }
 
   public Student() {
@@ -21,7 +25,7 @@ public class Student {
   }
 
   public void introduce() {
-    System.out.println("Hi, I,m " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
   }
 
   public void getGoal() {
@@ -30,5 +34,12 @@ public class Student {
 
   public void skipDays(int numberOfDays) {
     skippedDays += numberOfDays;
+  }
+
+  public static void main(String[] args) {
+    Student student = new Student();
+    student.introduce();
+    student.getGoal();
+    student.skipDays(3);
   }
 }

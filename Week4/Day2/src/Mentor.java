@@ -8,7 +8,10 @@ public class Mentor {
   String level;
 
   public Mentor(String name, int age, String gender, String level) {
-
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.level = level;
   }
 
   public Mentor() {
@@ -19,10 +22,16 @@ public class Mentor {
   }
 
   public void introduce() {
-    System.out.println("Hi, I,m " + name + ", a " + age + " year old " + gender + level + " mentor.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " " + level + " mentor.");
   }
 
   public void getGoal() {
-    System.out.println("Be a junior software developer.");
+    System.out.println("Educate brilliant junior software developers..");
+  }
+
+  public static void main(String[] args) {
+    Mentor mentor = new Mentor();
+    mentor.introduce();
+    mentor.getGoal();
   }
 }

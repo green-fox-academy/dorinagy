@@ -9,6 +9,10 @@ public class Sponsor {
   int hiredStudents;
 
   public Sponsor(String name, int age, String gender, String company) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.company = company;
     hiredStudents = 0;
   }
 
@@ -21,7 +25,7 @@ public class Sponsor {
   }
 
   public void introduce() {
-    System.out.println("Hi, I,m " + name + ", a " + age + " year old " + gender + " who represents " + company + " and hired " + hiredStudents + " students so far.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " who represents " + company + " and hired " + hiredStudents + " students so far.");
   }
 
   public void getGoal() {
@@ -30,5 +34,12 @@ public class Sponsor {
 
   public void hire() {
     this.hiredStudents++;
+  }
+
+  public static void main(String[] args) {
+    Sponsor sponsor = new Sponsor();
+    sponsor.introduce();
+    sponsor.getGoal();
+    sponsor.hire();
   }
 }
