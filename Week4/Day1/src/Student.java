@@ -6,5 +6,6 @@ public class Student {
   }
 
   public void question(Teacher answer) {
+    Teacher teacher = new Teacher();
   }
 }

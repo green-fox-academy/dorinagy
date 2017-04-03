@@ -3,7 +3,7 @@
  */
 public class Teacher {
   public void teach(Student learn) {
-
+    Student student = new Student();
   }
 
   public void answer() {
