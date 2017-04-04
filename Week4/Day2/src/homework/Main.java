@@ -1,26 +1,29 @@
-package Package1;
+package homework;
 
 import java.util.ArrayList;
 
 /**
- * Created by Nagy Dóra on 2017.04.04..
+ * Created by Nagy Dóra on 2017.04.03..
  */
-public class TestInput {
+public class Main {
   public static void main(String[] args) {
     ArrayList<Person> people = new ArrayList<>();
+    ArrayList<Student> students = new ArrayList<>();
+    ArrayList<Mentor> mentors = new ArrayList<>();
+
 
     Person mark = new Person("Mark", 46, "male");
     people.add(mark);
     Person jane = new Person();
     people.add(jane);
     Student john = new Student("John Doe", 20, "male", "BME");
-    people.add(john);
+    students.add(john);
     Student student = new Student();
-    people.add(student);
+    students.add(student);
     Mentor gandhi = new Mentor("Gandhi", 148, "male", "senior");
-    people.add(gandhi);
+    mentors.add(gandhi);
     Mentor mentor = new Mentor();
-    people.add(mentor);
+    mentors.add(mentor);
     Sponsor sponsor = new Sponsor();
     Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
 
@@ -33,16 +36,21 @@ public class TestInput {
       sponsor.hire();
     }
 
-    for (Person person : people) {
+    for(Person person : people) {
       person.introduce();
       person.getGoal();
     }
-
-    LagopusClass badass = new LagopusClass("BADA55");
-    badass.addStudent(student);
-    badass.addStudent(john);
-    badass.addMentor(mentor);
-    badass.addMentor(gandhi);
-    badass.info();
+    for(Student currentStudent : students) {
+      currentStudent.introduce();
+      currentStudent.getGoal();
+    }
+    for(Mentor currentMentor : mentors) {
+      currentMentor.introduce();
+      currentMentor.getGoal();
+    }
+    sponsor.introduce();
+    sponsor.getGoal();
+    elon.introduce();
+    elon.getGoal();
   }
 }

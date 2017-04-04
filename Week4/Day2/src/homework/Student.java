@@ -1,20 +1,27 @@
-package Package1;
+package homework;
 
 /**
- * Created by Nagy Dóra on 2017.04.04..
+ * Created by Nagy Dóra on 2017.04.03..
  */
-public class Student extends Person{
+public class Student {
+  String name;
+  int age;
+  String gender;
   String previousOrganization;
   int skippedDays;
 
-  public Student(String name, int age, String gender,String previousOrganization) {
-    super(name, age, gender);
+  public Student(String name, int age, String gender, String previousOrganization) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
     this.previousOrganization = previousOrganization;
     this.skippedDays = 0;
   }
 
   public Student() {
-    super();
+    name = "Jane Doe";
+    age = 30;
+    gender = "female";
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
@@ -29,5 +36,12 @@ public class Student extends Person{
 
   public void skipDays(int numberOfDays) {
     skippedDays += numberOfDays;
+  }
+
+  public static void main(String[] args) {
+    Student student = new Student();
+    student.introduce();
+    student.getGoal();
+    student.skipDays(3);
   }
 }

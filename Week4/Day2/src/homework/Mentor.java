@@ -1,18 +1,25 @@
-package Package1;
+package homework;
 
 /**
- * Created by Nagy Dóra on 2017.04.04..
+ * Created by Nagy Dóra on 2017.04.03..
  */
-public class Mentor extends Person{
+public class Mentor {
+  String name;
+  int age;
+  String gender;
   String level;
 
   public Mentor(String name, int age, String gender, String level) {
-    super(name, age, gender);
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
     this.level = level;
   }
 
   public Mentor() {
-    super();
+    name = "Jane Doe";
+    age = 30;
+    gender = "female";
     level = "intermediate";
   }
 
@@ -24,4 +31,9 @@ public class Mentor extends Person{
     System.out.println("Educate brilliant junior software developers..");
   }
 
+  public static void main(String[] args) {
+    Mentor mentor = new Mentor();
+    mentor.introduce();
+    mentor.getGoal();
+  }
 }

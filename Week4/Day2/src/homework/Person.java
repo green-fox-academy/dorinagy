@@ -1,12 +1,12 @@
-package Package1;
+package homework;
 
 /**
- * Created by Nagy Dóra on 2017.04.04..
+ * Created by Nagy Dóra on 2017.04.03..
  */
 public class Person {
-  public String name;
-  public int age;
-  public String gender;
+  String name;
+  int age;
+  String gender;
 
   public Person(String name, int age, String gender) {
     this.name = name;
@@ -28,4 +28,9 @@ public class Person {
     System.out.println("My goal is: Live for the moment!");
   }
 
+  public static void main(String[] args) {
+    Person person = new Person();
+    person.introduce();
+    person.getGoal();
+  }
 }

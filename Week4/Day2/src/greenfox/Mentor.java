@@ -1,23 +1,18 @@
+package greenfox;
+
 /**
- * Created by Nagy Dóra on 2017.04.03..
+ * Created by Nagy Dóra on 2017.04.04..
  */
-public class Mentor {
-  String name;
-  int age;
-  String gender;
+public class Mentor extends Person {
   String level;
 
   public Mentor(String name, int age, String gender, String level) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender);
     this.level = level;
   }
 
   public Mentor() {
-    name = "Jane Doe";
-    age = 30;
-    gender = "female";
+    super();
     level = "intermediate";
   }
 
@@ -29,9 +24,4 @@ public class Mentor {
     System.out.println("Educate brilliant junior software developers..");
   }
 
-  public static void main(String[] args) {
-    Mentor mentor = new Mentor();
-    mentor.introduce();
-    mentor.getGoal();
-  }
 }

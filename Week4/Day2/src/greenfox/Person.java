@@ -1,10 +1,12 @@
+package greenfox;
+
 /**
- * Created by Nagy Dóra on 2017.04.03..
+ * Created by Nagy Dóra on 2017.04.04..
  */
 public class Person {
-  String name;
-  int age;
-  String gender;
+  public String name;
+  public int age;
+  public String gender;
 
   public Person(String name, int age, String gender) {
     this.name = name;
@@ -26,9 +28,4 @@ public class Person {
     System.out.println("My goal is: Live for the moment!");
   }
 
-  public static void main(String[] args) {
-    Person person = new Person();
-    person.introduce();
-    person.getGoal();
-  }
 }

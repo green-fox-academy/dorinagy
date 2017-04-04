@@ -1,25 +1,22 @@
+package greenfox;
+
+import greenfox.Person;
+
 /**
- * Created by Nagy Dóra on 2017.04.03..
+ * Created by Nagy Dóra on 2017.04.04..
  */
-public class Student {
-  String name;
-  int age;
-  String gender;
+public class Student extends Person {
   String previousOrganization;
   int skippedDays;
 
-  public Student(String name, int age, String gender, String previousOrganization) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+  public Student(String name, int age, String gender,String previousOrganization) {
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     this.skippedDays = 0;
   }
 
   public Student() {
-    name = "Jane Doe";
-    age = 30;
-    gender = "female";
+    super();
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
@@ -34,12 +31,5 @@ public class Student {
 
   public void skipDays(int numberOfDays) {
     skippedDays += numberOfDays;
-  }
-
-  public static void main(String[] args) {
-    Student student = new Student();
-    student.introduce();
-    student.getGoal();
-    student.skipDays(3);
   }
 }

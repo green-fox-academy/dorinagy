@@ -1,9 +1,11 @@
-package Package1;
+package greenfox;
+
+import greenfox.Person;
 
 /**
  * Created by Nagy Dóra on 2017.04.04..
  */
-public class Sponsor extends Person{
+public class Sponsor extends Person {
   String company;
   int hiredStudents;
 
