@@ -7,12 +7,18 @@ public class Sponsor extends Person{
   String company;
   int hiredStudents;
 
-  public Sponsor(String company) {
+  public Sponsor(String name, int age, String gender, String company) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
     this.company = company;
     hiredStudents = 0;
   }
 
   public Sponsor() {
+    this.name = "Jane Doe";
+    this.age = 30;
+    this.gender = "female";
     company = "Google";
     hiredStudents = 0;
   }
@@ -29,10 +35,4 @@ public class Sponsor extends Person{
     this.hiredStudents++;
   }
 
-  public static void main(String[] args) {
-    Sponsor sponsor = new Sponsor();
-    sponsor.introduce();
-    sponsor.getGoal();
-    sponsor.hire();
-  }
 }

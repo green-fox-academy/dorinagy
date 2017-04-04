@@ -6,7 +6,10 @@ package Package1;
 public class Mentor extends Person{
   String level;
 
-  public Mentor(String level) {
+  public Mentor(String name, int age, String gender, String level) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
     this.level = level;
   }
 
@@ -22,9 +25,4 @@ public class Mentor extends Person{
     System.out.println("Educate brilliant junior software developers..");
   }
 
-  public static void main(String[] args) {
-    Mentor mentor = new Mentor();
-    mentor.introduce();
-    mentor.getGoal();
-  }
 }

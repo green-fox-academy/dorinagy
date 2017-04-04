@@ -28,9 +28,4 @@ public class Person {
     System.out.println("My goal is: Live for the moment!");
   }
 
-  public static void main(String[] args) {
-    Person person = new Person();
-    person.introduce();
-    person.getGoal();
-  }
 }

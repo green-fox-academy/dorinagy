@@ -18,21 +18,14 @@ public class LagopusClass {
   }
 
   public void addStudent(Student student) {
-    students.add(student);
+    this.students.add(student);
   }
 
   public void addMentor(Mentor mentor) {
-    mentors.add(mentor);
+    this.mentors.add(mentor);
   }
 
   public void info() {
     System.out.println("Lagopus " + className + " has " + students.size() + " students and " + mentors.size() + " mentors.");
-  }
-
-  public static void main(String[] args) {
-    LagopusClass lagopus = new LagopusClass("Eagles");
-    //lagopus.addStudent(Student);
-    //lagopus.addMentor(Mentor);
-    lagopus.info();
   }
 }

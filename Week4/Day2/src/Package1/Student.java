@@ -7,12 +7,18 @@ public class Student extends Person{
   String previousOrganization;
   int skippedDays;
 
-  public Student(String previousOrganization) {
+  public Student(String name, int age, String gender,String previousOrganization) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
     this.previousOrganization = previousOrganization;
     this.skippedDays = 0;
   }
 
   public Student() {
+    this.name = "Jane Doe";
+    this.age = 30;
+    this.gender = "female";
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
@@ -26,14 +32,6 @@ public class Student extends Person{
   }
 
   public void skipDays(int numberOfDays) {
-
     skippedDays += numberOfDays;
-  }
-
-  public static void main(String[] args) {
-    Student student = new Student();
-    student.introduce();
-    student.getGoal();
-    student.skipDays(3);
   }
 }
