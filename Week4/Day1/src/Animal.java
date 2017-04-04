@@ -32,6 +32,9 @@ public class Animal {
 
   public static void main(String[] args) {
     Animal dolphin = new Animal("dolphin");
+    dolphin.drink();
+    dolphin.eat();
+    dolphin.play();
     System.out.println(dolphin.toString());
   }
 }
