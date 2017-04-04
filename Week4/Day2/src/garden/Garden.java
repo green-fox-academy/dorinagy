@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by Nagy Dóra on 2017.04.04..
  */
 public class Garden {
-  int waterAmount = 10;
+  int waterAmount;
   ArrayList<Plants> plants;
 
   public Garden() {
@@ -14,8 +14,11 @@ public class Garden {
   }
 
   public void watering(int waterAmount) {
-    for(Plants plant : plants) {}
-    waterAmount += 30;
+    this.waterAmount = waterAmount;
+    for(Plants plant : plants) {
+      int waterForOne = waterAmount / plants.size();
+      plant.watering(waterForOne);
+    }
     System.out.println("Watering with " + waterAmount);
   }
 }

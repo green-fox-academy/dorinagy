@@ -20,10 +20,10 @@ public class Flower extends Plants {
     }
   }
 
-  public void watering(int waterAmount) {
+  public void watering(int waterForOne) {
     if (currentWaterAmount < 10) {
-      System.out.println("Watering with " + waterAmount);
-      currentWaterAmount += (waterAmount / 4) * 0.75;
+      System.out.println("Watering with " + waterForOne);
+      currentWaterAmount += (waterForOne * 0.75);
     }
   }
 }

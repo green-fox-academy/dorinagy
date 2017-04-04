@@ -18,12 +18,16 @@ public class GardenApp {
     Tree orange = new Tree("orange");
     plants.add(orange);
 
-    for(int i = 0; i < 3; i++) {
-      yellow.needsWater();
-      blue.needsWater();
-      purple.needsWater();
-      orange.needsWater();
-      myGarden.watering();
+    for(Plants plant : plants) {
+      plant.needsWater();
+    }
+    myGarden.watering(40);
+    for(Plants plant : plants) {
+      plant.needsWater();
+    }
+    myGarden.watering(70);
+    for(Plants plant : plants) {
+      plant.needsWater();
     }
   }
 }

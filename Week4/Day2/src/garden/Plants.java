@@ -16,6 +16,6 @@ public class Plants {
   public void needsWater() {
   }
 
-  public void watering() {
+  public void watering(int waterForOne) {
   }
 }
