@@ -10,15 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created by Nagy Dóra on 2017.04.05..
  */
 class SumTest {
-  Sum sum = new Sum();
-
-  @BeforeEach
-  void createList() {
-    sum = new Sum();
-  }
+  ArrayList<Integer> list = new ArrayList<>();
 
   @Test
   void sum() {
+    Sum sum = new Sum(list);
     int a = 2;
     int b = 5;
     int c = 7;
@@ -29,18 +25,21 @@ class SumTest {
   }
 
   @Test
-  void sumIsEmpty() {
+  void testIsEmpty() {
+    Sum sum = new Sum(list);
     assertEquals(sum.sumList(),0);
   }
 
   @Test
-  void sumOneElement() {
+  void testOneElement() {
+    Sum sum = new Sum(list);
     int a = 2;
     sum.addInts(a);
     assertEquals(sum.sumList(),a);
   }
   @Test
-  void sumNull() {
-    assertEquals(sum.sumList(),null);
+  void testNull() {
+    Sum sum = new Sum();
+    assertNull(sum.sumList());
   }
 }
