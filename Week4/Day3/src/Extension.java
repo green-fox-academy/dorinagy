@@ -33,6 +33,7 @@ public class Extension {
   }
 
   boolean isVowel(char c) {
+
     return Arrays.asList('a', 'u', 'o', 'e', 'i').contains(c);
   }
 
