@@ -5,11 +5,12 @@ public class Apple {
   private String apple;
 
   public Apple(String apple) {
+
     this.apple = apple;
   }
 
   public String getApple() {
-    System.out.println(apple);
-    return apple;
+    System.out.println(apple + apple);
+    return apple + apple;
   }
 }

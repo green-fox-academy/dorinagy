@@ -11,6 +11,7 @@ class AppleTest {
 
   @Test
   void getApple() {
-    assertEquals(apple, Apple.getApple());
+
+    assertEquals(apple + apple, Apple.getApple());
   }
 }
