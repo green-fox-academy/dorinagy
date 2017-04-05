@@ -29,9 +29,7 @@ public class Animal {
   public int[] play() {
     thirst -= 1;
     hunger -= 1;
-    int[]play = new int[2];
-    play[0] = hunger;
-    play[1] = thirst;
+    int[]play = {hunger, thirst};
     return play;
   }
 }

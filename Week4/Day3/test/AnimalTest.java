@@ -36,10 +36,8 @@ class AnimalTest {
 
   @Test
   void play() {
-    int[]myPlay = new int[2];
-    myPlay[0] = 49;
-    myPlay[1] = 49;
-    assertEquals(myPlay, animal.play());
+    int[]myPlay = {49, 49};
+    assertArrayEquals(myPlay, animal.play());
   }
 
 }
