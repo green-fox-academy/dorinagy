@@ -15,6 +15,13 @@ class SharpieTest {
   }
 
   @Test
+  void useAgain() {
+    sharpie.inkAmount = 80;
+    float inkAmount = 79;
+    assertEquals(inkAmount, sharpie.use());
+  }
+
+  @Test
   void isEmpty() {
     sharpie.inkAmount = 0;
     float inkAmount = 0;
