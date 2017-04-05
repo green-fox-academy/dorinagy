@@ -21,11 +21,11 @@ public class Extension {
     }
   }
 
-  int median(List<Integer> pool) {
+  double median(List<Integer> pool) {
     Collections.sort(pool);
-    int median;
+    double median;
     if (pool.size() % 2 == 0) {
-      median = (pool.get((pool.size() - 1)/2) + pool.get((pool.size() + 1)/2))/2;
+      median = (pool.get((pool.size()/2)-1) + pool.get(pool.size()/2))/2;
     } else {
       median = pool.get(pool.size()/2);
       }
