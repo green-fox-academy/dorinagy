@@ -12,7 +12,7 @@ class AnagramTest {
 
   @Test
   void isAnagram() {
-    assertEquals(anagram.isAnagram(s1, s2), false);
+    assertFalse(anagram.isAnagram(s1, s2));
   }
 
 }
