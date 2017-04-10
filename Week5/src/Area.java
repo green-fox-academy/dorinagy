@@ -3,7 +3,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class Area extends GameObject implements KeyListener{
+public class Area extends GameObject implements KeyListener {
   ArrayList<Tile> tileMap;
   int testBoxX;
   int testBoxY;
@@ -22,22 +22,22 @@ public class Area extends GameObject implements KeyListener{
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    for(int i = 0; i < 10; i++) {
-      for(int j = 0; j < 10; j++) {
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
         EmptyTile floor = new EmptyTile(i * 72, j * 72);
         tileMap.add(floor);
         floor.draw(graphics);
       }
     }
 
-    for(int i = 1; i < 10; i += 2) {
-      for(int j = 0; j < 10; j++) {
-        if(j % 3 == 0) {
+    for (int i = 1; i < 10; i += 2) {
+      for (int j = 0; j < 10; j++) {
+        if (j % 3 == 0) {
 
         } else {
-        NotEmptyTile wall = new NotEmptyTile(i * 72, j * 72);
-        tileMap.add(wall);
-        wall.draw(graphics);
+          NotEmptyTile wall = new NotEmptyTile(i * 72, j * 72);
+          tileMap.add(wall);
+          wall.draw(graphics);
         }
       }
     }
@@ -60,7 +60,7 @@ public class Area extends GameObject implements KeyListener{
     if (e.getKeyCode() == KeyEvent.VK_UP && testBoxY > 0) {
       testBoxY -= 72;
       filename = "assets/hero-up.png";
-  } else if (e.getKeyCode() == KeyEvent.VK_DOWN && testBoxY < size - 72) {
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && testBoxY < size - 72) {
       testBoxY += 72;
       filename = "assets/hero-down.png";
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && testBoxX > 0) {
@@ -69,7 +69,8 @@ public class Area extends GameObject implements KeyListener{
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < size - 72) {
       testBoxX += 72;
       filename = "assets/hero-right.png";
-    } else {}
+    } else {
+    }
     repaint();
   }
 }
