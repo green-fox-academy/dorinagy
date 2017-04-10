@@ -7,6 +7,7 @@ public class Area extends GameObject implements KeyListener{
   int testBoxY;
   int posX;
   int posY;
+  String filename = "assets/hero-down.png";
 
   public Area() {
     testBoxX = 0;
@@ -23,12 +24,9 @@ public class Area extends GameObject implements KeyListener{
     super.paint(graphics);
     for(int i = 0; i < 10; i++) {
       for(int j = 0; j < 10; j++) {
-        EmptyTile emptyTile = new EmptyTile(posX, posY);
+        EmptyTile emptyTile = new EmptyTile(i * 72, j * 72);
         emptyTile.draw(graphics);
-        posX += 72;
       }
-      posX = 0;
-      posY += 72;
     }
 
     for(int i = 1; i < 10; i+=2) {
@@ -41,7 +39,10 @@ public class Area extends GameObject implements KeyListener{
         }
       }
     }
+    Hero hero = new Hero(filename, testBoxX, testBoxY);
+    hero.draw(graphics);
   }
+
   @Override
   public void keyTyped(KeyEvent e) {
 
@@ -55,13 +56,17 @@ public class Area extends GameObject implements KeyListener{
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 100;
+      testBoxY -= 72;
+      filename = "assets/hero-up.png";
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
+      testBoxY += 72;
+      filename = "assets/hero-down.png";
     } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-      testBoxX -= 100;
+      testBoxX -= 72;
+      filename = "assets/hero-left.png";
     } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      testBoxX += 100;
+      testBoxX += 72;
+      filename = "assets/hero-right.png";
     }
     repaint();
   }
