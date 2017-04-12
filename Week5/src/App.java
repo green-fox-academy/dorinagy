@@ -12,7 +12,7 @@ public class App extends JComponent implements KeyListener {
   Area area;
   Hero hero;
   Boss boss;
-  Skeleton skeleton;
+  Skeleton skeleton1, skeleton2, skeleton3;
 
   public App() {
     setPreferredSize(new Dimension(MAP_SIZE, MAP_SIZE));
@@ -20,16 +20,20 @@ public class App extends JComponent implements KeyListener {
     area = new Area();
     hero = new Hero();
     boss = new Boss();
-    skeleton = new Skeleton();
+    skeleton1 = new Skeleton();
+    skeleton2 = new Skeleton();
+    skeleton3 = new Skeleton();
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
     area.drawArea(graphics);
-    hero.draw(graphics);
     boss.draw(graphics);
-    skeleton.draw(graphics);
+    skeleton1.draw(graphics);
+    skeleton2.draw(graphics);
+    skeleton3.draw(graphics);
+    hero.draw(graphics);
   }
 
   @Override
