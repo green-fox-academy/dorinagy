@@ -4,16 +4,17 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class Area extends GameObject implements KeyListener {
-  ArrayList<Tile> tileMap;
-  int testBoxX;
-  int testBoxY;
+  ArrayList<Tile> wallMap;
+  int heroX;
+  int heroY;
   int size = 720;
   String filename = "assets/hero-down.png";
+  Hero hero;
 
   public Area() {
-    tileMap = new ArrayList<>();
-    testBoxX = 0;
-    testBoxY = 0;
+    wallMap = new ArrayList<>();
+    heroX = 0;
+    heroY = 0;
     setPreferredSize(new Dimension(size, size));
     setVisible(true);
 
@@ -25,7 +26,6 @@ public class Area extends GameObject implements KeyListener {
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
         EmptyTile floor = new EmptyTile(i * 72, j * 72);
-        tileMap.add(floor);
         floor.draw(graphics);
       }
     }
@@ -36,13 +36,17 @@ public class Area extends GameObject implements KeyListener {
 
         } else {
           NotEmptyTile wall = new NotEmptyTile(i * 72, j * 72);
-          tileMap.add(wall);
+          wallMap.add(wall);
           wall.draw(graphics);
         }
       }
     }
-    Hero hero = new Hero(filename, testBoxX, testBoxY);
+    Hero hero = new Hero(filename, heroX, heroY);
     hero.draw(graphics);
+  }
+
+  public void drawSkeletons() {
+
   }
 
   @Override
@@ -57,20 +61,39 @@ public class Area extends GameObject implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
-    if (e.getKeyCode() == KeyEvent.VK_UP && testBoxY > 0) {
-      testBoxY -= 72;
-      filename = "assets/hero-up.png";
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && testBoxY < size - 72) {
-      testBoxY += 72;
-      filename = "assets/hero-down.png";
-    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && testBoxX > 0) {
-      testBoxX -= 72;
-      filename = "assets/hero-left.png";
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < size - 72) {
-      testBoxX += 72;
-      filename = "assets/hero-right.png";
+    int currentX = heroX;
+    int currentY = heroY;
+    if (e.getKeyCode() == KeyEvent.VK_UP && heroY > 0) {
+      if(!isWall(currentX, currentY - 72)) {
+        heroY -= 72;
+        filename = "assets/hero-up.png";
+      }
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < size - 72) {
+      if(!isWall(currentX, currentY + 72)) {
+        heroY += 72;
+        filename = "assets/hero-down.png";
+      }
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX > 0) {
+      if(!isWall(currentX - 72, currentY)) {
+        heroX -= 72;
+        filename = "assets/hero-left.png";
+      }
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < size - 72) {
+      if(!isWall(currentX + 72, currentY)) {
+        heroX += 72;
+        filename = "assets/hero-right.png";
+      }
     } else {
     }
     repaint();
+  }
+
+  public boolean isWall(int toHereX, int toHereY) {
+    for(int i = 0; i < wallMap.size(); i++) {
+      if (toHereX == wallMap.get(i).posX && toHereY == wallMap.get(i).posY) {
+        return true;
+      }
+    }
+    return false;
   }
 }
