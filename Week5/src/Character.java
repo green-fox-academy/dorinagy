@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class Character extends GameObject{
@@ -7,8 +8,8 @@ public class Character extends GameObject{
   public Character() {
   }
 
-  public Character(int posX, int posY) {
-    super(posX, posY);
+  public Character(BufferedImage image, int posX, int posY) {
+    super(image, posX, posY);
     characterList.add(this);
   }
 }

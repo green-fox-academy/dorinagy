@@ -5,22 +5,19 @@ import java.util.ArrayList;
 
 public class Area extends GameObject implements KeyListener {
   ArrayList<Tile> wallMap;
-  ArrayList<GameObject> monsterMap;
   int heroX;
   int heroY;
   int size = 720;
   Hero hero;
   Skeleton skeleton;
   Boss boss;
-  String heroname = "assets/hero-down.png";
-  String filename;
 
   public Area() {
     wallMap = new ArrayList<>();
     heroX = 0;
     heroY = 0;
+    hero = new Hero(heroX, heroY);
     randomNumbers();
-    //skeleton = new Skeleton(filename, posX, posY);
     setPreferredSize(new Dimension(size, size));
     setVisible(true);
 
@@ -33,7 +30,7 @@ public class Area extends GameObject implements KeyListener {
       x = (int) (Math.random() * 10) * 72;
       y = (int) (Math.random() * 10) * 72;
     }
-    skeleton = new Skeleton(filename, x, y);
+    skeleton = new Skeleton();
   }
 
   @Override
@@ -57,7 +54,6 @@ public class Area extends GameObject implements KeyListener {
         }
       }
     }
-    hero = new Hero(heroname, heroX, heroY);
     skeleton.draw(graphics);
     //skeleton.draw(graphics);
     //skeleton.draw(graphics);
@@ -81,23 +77,19 @@ public class Area extends GameObject implements KeyListener {
     int currentY = heroY;
     if (e.getKeyCode() == KeyEvent.VK_UP && heroY > 0) {
       if (!isWall(currentX, currentY - 72)) {
-        heroY -= 72;
-        heroname = "assets/hero-up.png";
+        hero.moveUp();
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < size - 72) {
       if (!isWall(currentX, currentY + 72)) {
-        heroY += 72;
-        heroname = "assets/hero-down.png";
+        hero.moveDown();
       }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX > 0) {
       if (!isWall(currentX - 72, currentY)) {
-        heroX -= 72;
-        heroname = "assets/hero-left.png";
+        hero.moveLeft();
       }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < size - 72) {
       if (!isWall(currentX + 72, currentY)) {
-        heroX += 72;
-        heroname = "assets/hero-right.png";
+        hero.moveRight();
       }
     } else {
     }
