@@ -9,7 +9,6 @@ public class Area extends GameObject implements KeyListener {
   int heroY;
   int size = 720;
   String filename = "assets/hero-down.png";
-  Hero hero;
 
   public Area() {
     wallMap = new ArrayList<>();
@@ -17,7 +16,6 @@ public class Area extends GameObject implements KeyListener {
     heroY = 0;
     setPreferredSize(new Dimension(size, size));
     setVisible(true);
-
   }
 
   @Override
@@ -41,12 +39,9 @@ public class Area extends GameObject implements KeyListener {
         }
       }
     }
+
     Hero hero = new Hero(filename, heroX, heroY);
     hero.draw(graphics);
-  }
-
-  public void drawSkeletons() {
-
   }
 
   @Override
@@ -64,22 +59,22 @@ public class Area extends GameObject implements KeyListener {
     int currentX = heroX;
     int currentY = heroY;
     if (e.getKeyCode() == KeyEvent.VK_UP && heroY > 0) {
-      if(!isWall(currentX, currentY - 72)) {
+      if (!isWall(currentX, currentY - 72)) {
         heroY -= 72;
         filename = "assets/hero-up.png";
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < size - 72) {
-      if(!isWall(currentX, currentY + 72)) {
+      if (!isWall(currentX, currentY + 72)) {
         heroY += 72;
         filename = "assets/hero-down.png";
       }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX > 0) {
-      if(!isWall(currentX - 72, currentY)) {
+      if (!isWall(currentX - 72, currentY)) {
         heroX -= 72;
         filename = "assets/hero-left.png";
       }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < size - 72) {
-      if(!isWall(currentX + 72, currentY)) {
+      if (!isWall(currentX + 72, currentY)) {
         heroX += 72;
         filename = "assets/hero-right.png";
       }
@@ -89,7 +84,7 @@ public class Area extends GameObject implements KeyListener {
   }
 
   public boolean isWall(int toHereX, int toHereY) {
-    for(int i = 0; i < wallMap.size(); i++) {
+    for (int i = 0; i < wallMap.size(); i++) {
       if (toHereX == wallMap.get(i).posX && toHereY == wallMap.get(i).posY) {
         return true;
       }
