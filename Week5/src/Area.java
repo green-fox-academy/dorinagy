@@ -5,17 +5,35 @@ import java.util.ArrayList;
 
 public class Area extends GameObject implements KeyListener {
   ArrayList<Tile> wallMap;
+  ArrayList<GameObject> monsterMap;
   int heroX;
   int heroY;
   int size = 720;
-  String filename = "assets/hero-down.png";
+  Hero hero;
+  Skeleton skeleton;
+  Boss boss;
+  String heroname = "assets/hero-down.png";
+  String filename;
 
   public Area() {
     wallMap = new ArrayList<>();
     heroX = 0;
     heroY = 0;
+    randomNumbers();
+    //skeleton = new Skeleton(filename, posX, posY);
     setPreferredSize(new Dimension(size, size));
     setVisible(true);
+
+  }
+
+  public void randomNumbers() {
+    int x = (int) (Math.random() * 10) * 72;
+    int y = (int) (Math.random() * 10) * 72;
+    while(isWall(x, y)){
+      x = (int) (Math.random() * 10) * 72;
+      y = (int) (Math.random() * 10) * 72;
+    }
+    skeleton = new Skeleton(filename, x, y);
   }
 
   @Override
@@ -39,8 +57,11 @@ public class Area extends GameObject implements KeyListener {
         }
       }
     }
-
-    Hero hero = new Hero(filename, heroX, heroY);
+    hero = new Hero(heroname, heroX, heroY);
+    skeleton.draw(graphics);
+    //skeleton.draw(graphics);
+    //skeleton.draw(graphics);
+    //boss.draw(graphics);
     hero.draw(graphics);
   }
 
@@ -61,22 +82,22 @@ public class Area extends GameObject implements KeyListener {
     if (e.getKeyCode() == KeyEvent.VK_UP && heroY > 0) {
       if (!isWall(currentX, currentY - 72)) {
         heroY -= 72;
-        filename = "assets/hero-up.png";
+        heroname = "assets/hero-up.png";
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < size - 72) {
       if (!isWall(currentX, currentY + 72)) {
         heroY += 72;
-        filename = "assets/hero-down.png";
+        heroname = "assets/hero-down.png";
       }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX > 0) {
       if (!isWall(currentX - 72, currentY)) {
         heroX -= 72;
-        filename = "assets/hero-left.png";
+        heroname = "assets/hero-left.png";
       }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < size - 72) {
       if (!isWall(currentX + 72, currentY)) {
         heroX += 72;
-        filename = "assets/hero-right.png";
+        heroname = "assets/hero-right.png";
       }
     } else {
     }
