@@ -4,7 +4,7 @@ import java.awt.*;
  * Created by Nagy Dóra on 2017.04.12..
  */
 public class Area {
-  int[][] wallMap;
+  static int[][] wallMap;
   int[][] newArea = {
           {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
           {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
@@ -36,7 +36,7 @@ public class Area {
     }
   }
 
-  public boolean isWall(int x, int y) {
+  public static boolean isWall(int x, int y) {
     if (wallMap[y][x] == 1) {
       return true;
     } else {
