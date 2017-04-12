@@ -8,19 +8,13 @@ import java.io.IOException;
 public class GameObject extends JComponent{
   BufferedImage image;
   int posX, posY;
-
   public GameObject() {
 
   }
 
-  public GameObject(String filename, int posX, int posY) {
+  public GameObject(int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
-    try {
-      image = ImageIO.read(new File(filename));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
   }
 
   public void draw(Graphics graphics) {

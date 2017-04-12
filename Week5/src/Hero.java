@@ -1,6 +1,7 @@
 
 public class Hero extends Character {
-  public Hero(String filename, int posX, int posY) {
-    super(filename, posX, posY);
+  public Hero(int heroX, int heroY) {
+    super(heroX, heroY);
+    image = ImageLoader.getInstance().HERO_DOWN;
   }
 }

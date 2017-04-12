@@ -3,6 +3,7 @@
  */
 public class EmptyTile extends Tile {
   public EmptyTile(int posX, int posY) {
-    super("assets/floor.png", posX, posY);
+    super(posX, posY);
+    image = ImageLoader.getInstance().FLOOR;
   }
 }
