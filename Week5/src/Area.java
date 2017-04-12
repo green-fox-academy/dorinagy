@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.util.ArrayList;
 
 /**
  * Created by Nagy Dóra on 2017.04.12..
@@ -24,8 +23,8 @@ public class Area {
   }
 
   public void drawArea(Graphics graphics) {
-    for (int i=0; i < 10; i++) {
-      for (int j=0; j < 10; j++) {
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
         if (this.wallMap[j][i] == 1) {
           Wall newWall = new Wall(i, j);
           newWall.draw(graphics);
@@ -46,8 +45,8 @@ public class Area {
   }
 
   public static boolean isEmpty(int x, int y) {
-    for(int i = 0; i < App.monsterMap.size(); i++) {
-      if(x == App.monsterMap.get(i).posX && x == App.monsterMap.get(i).posX) {
+    for (int i = 0; i < App.monsterMap.size(); i++) {
+      if (x == App.monsterMap.get(i).posX && x == App.monsterMap.get(i).posX) {
         return false;
       }
     }

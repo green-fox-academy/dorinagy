@@ -47,30 +47,32 @@ public class App extends JComponent implements KeyListener {
   public void keyTyped(KeyEvent e) {
 
   }
+
   @Override
   public void keyPressed(KeyEvent e) {
 
   }
+
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       if (hero.posY > 0 && !area.isWall(hero.posX, hero.posY - 1)) {
-        hero.posY --;
+        hero.posY--;
       }
       hero.setImage(ImageLoader.getInstance().HERO_UP);
-    } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       if (hero.posY < mapTiles - 1 && !area.isWall(hero.posX, hero.posY + 1)) {
-        hero.posY ++;
+        hero.posY++;
       }
       hero.setImage(ImageLoader.getInstance().HERO_DOWN);
-    } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       if (hero.posX > 0 && !area.isWall(hero.posX - 1, hero.posY)) {
-        hero.posX --;
+        hero.posX--;
       }
       hero.setImage(ImageLoader.getInstance().HERO_LEFT);
-    } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       if (hero.posX < mapTiles - 1 && !area.isWall(hero.posX + 1, hero.posY)) {
-        hero.posX ++;
+        hero.posX++;
       }
       hero.setImage(ImageLoader.getInstance().HERO_RIGHT);
     }
