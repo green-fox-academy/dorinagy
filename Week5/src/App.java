@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 /**
  * Created by Nagy Dóra on 2017.04.12..
@@ -9,20 +10,26 @@ import java.awt.event.KeyListener;
 public class App extends JComponent implements KeyListener {
   final static int MAP_SIZE = 720;
   final static int mapTiles = 10;
+  static ArrayList<Monster> monsterMap;
   Area area;
   Hero hero;
   Boss boss;
   Skeleton skeleton1, skeleton2, skeleton3;
 
   public App() {
+    monsterMap = new ArrayList<>();
     setPreferredSize(new Dimension(MAP_SIZE, MAP_SIZE));
     setVisible(true);
     area = new Area();
     hero = new Hero();
     boss = new Boss();
+    monsterMap.add(boss);
     skeleton1 = new Skeleton();
+    monsterMap.add(skeleton1);
     skeleton2 = new Skeleton();
+    monsterMap.add(skeleton2);
     skeleton3 = new Skeleton();
+    monsterMap.add(skeleton3);
   }
 
   @Override
