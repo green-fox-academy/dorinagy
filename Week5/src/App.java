@@ -10,17 +10,20 @@ import java.util.ArrayList;
 public class App extends JComponent implements KeyListener {
   final static int MAP_SIZE = 720;
   final static int TILE_NUM = 10;
+  final static int HUD = 100;
   static ArrayList<Monster> monsterMap;
   Area area;
   Hero hero;
   Boss boss;
+  Hud hud;
   Skeleton skeleton;
 
   public App() {
     monsterMap = new ArrayList<>();
-    setPreferredSize(new Dimension(MAP_SIZE, MAP_SIZE));
+    setPreferredSize(new Dimension(MAP_SIZE, MAP_SIZE + HUD));
     setVisible(true);
     area = new Area();
+    hud = new Hud();
     hero = new Hero();
     boss = new Boss();
     monsterMap.add(boss);
@@ -36,12 +39,17 @@ public class App extends JComponent implements KeyListener {
     }
   }
 
+  public void drawHud(Graphics graphics) {
+    hud.draw(graphics, 340, MAP_SIZE + 20);
+  }
+
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
     area.drawArea(graphics);
     drawMonsterMap(graphics);
     hero.draw(graphics);
+    drawHud(graphics);
   }
 
   @Override
