@@ -27,14 +27,14 @@ public class App extends JComponent implements KeyListener {
     hero = new Hero();
     boss = new Boss();
     monsterMap.add(boss);
-    for(int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
       skeleton = new Skeleton();
       monsterMap.add(skeleton);
     }
   }
 
   public void drawMonsterMap(Graphics graphics) {
-    for(int i = 0; i < monsterMap.size(); i++) {
+    for (int i = 0; i < monsterMap.size(); i++) {
       monsterMap.get(i).draw(graphics);
     }
   }
