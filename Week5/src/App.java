@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class App extends JComponent implements KeyListener {
   final static int MAP_SIZE = 720;
-  final static int mapTiles = 10;
+  final static int TILE_NUM = 10;
   static ArrayList<Monster> monsterMap;
   Area area;
   Hero hero;
@@ -62,7 +62,7 @@ public class App extends JComponent implements KeyListener {
       }
       hero.setImage(ImageLoader.getInstance().HERO_UP);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      if (hero.posY < mapTiles - 1 && !area.isWall(hero.posX, hero.posY + 1)) {
+      if (hero.posY < TILE_NUM - 1 && !area.isWall(hero.posX, hero.posY + 1)) {
         hero.posY++;
       }
       hero.setImage(ImageLoader.getInstance().HERO_DOWN);
@@ -72,7 +72,7 @@ public class App extends JComponent implements KeyListener {
       }
       hero.setImage(ImageLoader.getInstance().HERO_LEFT);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      if (hero.posX < mapTiles - 1 && !area.isWall(hero.posX + 1, hero.posY)) {
+      if (hero.posX < TILE_NUM - 1 && !area.isWall(hero.posX + 1, hero.posY)) {
         hero.posX++;
       }
       hero.setImage(ImageLoader.getInstance().HERO_RIGHT);
