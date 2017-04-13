@@ -13,5 +13,9 @@ public class Boss extends Monster {
     image = ImageLoader.getInstance().BOSS;
     posX = x;
     posY = y;
+    DiceRoll.rollTheDice(d6);
+    maxHP = 2 * level * d6 + d6;
+    DP = level / 2 * d6 + d6 / 2;
+    SP = level * d6 + level;
   }
 }

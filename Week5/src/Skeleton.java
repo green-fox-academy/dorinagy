@@ -13,5 +13,9 @@ public class Skeleton extends Monster {
     image = ImageLoader.getInstance().SKELETON;
     posX = x;
     posY = y;
+    DiceRoll.rollTheDice(d6);
+    maxHP = 2 * level * d6;
+    DP = level / 2 * d6;
+    SP = level * d6;
   }
 }
