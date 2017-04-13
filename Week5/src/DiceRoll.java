@@ -3,8 +3,8 @@
  */
 public class DiceRoll {
 
-  public static int rollTheDice() {
-    int d6 = (int) (Math.random() * 5);
+  public static int rollTheDice(int d6) {
+    d6 = (int) (Math.random() * 5);
     return d6;
   }
 }
