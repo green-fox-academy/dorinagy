@@ -46,7 +46,7 @@ public class Area {
 
   public static boolean isEmpty(int x, int y) {
     for (int i = 0; i < App.monsterMap.size(); i++) {
-      if (x == App.monsterMap.get(i).posX && x == App.monsterMap.get(i).posX) {
+      if (x == App.monsterMap.get(i).posX && y == App.monsterMap.get(i).posY) {
         return false;
       }
     }

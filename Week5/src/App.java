@@ -14,7 +14,7 @@ public class App extends JComponent implements KeyListener {
   Area area;
   Hero hero;
   Boss boss;
-  Skeleton skeleton1, skeleton2, skeleton3;
+  Skeleton skeleton;
 
   public App() {
     monsterMap = new ArrayList<>();
@@ -24,22 +24,23 @@ public class App extends JComponent implements KeyListener {
     hero = new Hero();
     boss = new Boss();
     monsterMap.add(boss);
-    skeleton1 = new Skeleton();
-    monsterMap.add(skeleton1);
-    skeleton2 = new Skeleton();
-    monsterMap.add(skeleton2);
-    skeleton3 = new Skeleton();
-    monsterMap.add(skeleton3);
+    for(int i = 0; i < 3; i++) {
+      skeleton = new Skeleton();
+      monsterMap.add(skeleton);
+    }
+  }
+
+  public void drawMonsterMap(Graphics graphics) {
+    for(int i = 0; i < monsterMap.size(); i++) {
+      monsterMap.get(i).draw(graphics);
+    }
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
     area.drawArea(graphics);
-    boss.draw(graphics);
-    skeleton1.draw(graphics);
-    skeleton2.draw(graphics);
-    skeleton3.draw(graphics);
+    drawMonsterMap(graphics);
     hero.draw(graphics);
   }
 
