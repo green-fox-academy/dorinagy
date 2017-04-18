@@ -17,17 +17,16 @@ public class CharOperations implements CharSequence {
 
   @Override
   public CharSequence subSequence(int start, int end) {
+    String input = "marshmallow";
     String reversedStr = "";
     for(int i = end; i >= start; i--) {
-      reversedStr += charAt(i);
+      reversedStr += input.charAt(i);
     }
     return reversedStr;
   }
 
   public static void main(String[] args) {
     CharOperations charOp = new CharOperations();
-    String string = "marshmallow";
-    charOp.subSequence(0, 6);
-    System.out.println(string.subSequence(0, 6));
+    System.out.println(charOp.subSequence(0, 6));
   }
 }
