@@ -5,6 +5,12 @@ package charoperations;
  */
 public class CharOperations implements CharSequence {
 
+  String myString;
+
+  public CharOperations(String myString) {
+    this.myString = myString;
+  }
+
   @Override
   public int length() {
     return 0;
@@ -17,7 +23,7 @@ public class CharOperations implements CharSequence {
 
   @Override
   public CharSequence subSequence(int start, int end) {
-    String input = "marshmallow";
+    String input = myString;
     String reversedStr = "";
     for(int i = end; i >= start; i--) {
       reversedStr += input.charAt(i);
@@ -26,7 +32,7 @@ public class CharOperations implements CharSequence {
   }
 
   public static void main(String[] args) {
-    CharOperations charOp = new CharOperations();
+    CharOperations charOp = new CharOperations("marshmallow");
     System.out.println(charOp.subSequence(0, 6));
   }
 }
