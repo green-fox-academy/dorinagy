@@ -1,7 +1,8 @@
+package carloft;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Nagy Dóra on 2017.04.19..
@@ -21,7 +22,7 @@ public class ParkingLot {
     }
   }
 
-  public Map<Integer, CarType> countEachType(){
+  public int countEachType(){
     for(int i = 0; i < cars.size(); i++) {
       for(int j = 0; j < cars.size(); j++) {
         if(cars.get(i).type.equals(cars.get(j).type)) {
@@ -34,11 +35,23 @@ public class ParkingLot {
       count = 0;
     }
     System.out.println(countedCars);
-    return countedCars;
+    return count;
+  }
+
+  public int countEachColor() {
+    for(int i = 0; i < cars.size(); i++) {
+      for(int j = 0; j < cars.size(); j++) {
+        if(cars.get(i).color.equals(cars.get(j).color)) {
+          count++;
+        }
+      }
+    }
+    return count;
   }
 
   public static void main(String[] args) {
     ParkingLot parkingLot = new ParkingLot();
     parkingLot.countEachType();
+    parkingLot.countEachColor();
   }
 }
