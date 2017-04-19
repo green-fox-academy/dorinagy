@@ -15,7 +15,7 @@ public class Game {
   }
 
   public int generateRandomNum() {
-    randomNumber = random.nextInt(6) + 15;
+    randomNumber = random.nextInt(7) + 15;
     System.out.println(randomNumber);
     return randomNumber;
   }
