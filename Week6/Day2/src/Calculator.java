@@ -28,7 +28,13 @@ public class Calculator {
     return a.doubleValue() * b.doubleValue();
   }
   public static <T extends Number> double divide(T a, T b) {
-    System.out.println(a + " / " + b + " = " + a.doubleValue() / b.doubleValue());
-    return a.doubleValue() / b.doubleValue();
+    try {
+      System.out.println(a + " / " + b + " = " + a.doubleValue() / b.doubleValue());
+      return a.doubleValue() / b.doubleValue();
+    } catch(Exception e) {
+      System.out.println("Can't divide by zero");
+      e.printStackTrace();
+    }
+    return 0;
   }
 }
