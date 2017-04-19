@@ -46,6 +46,10 @@ public class Game {
     }
   }
 
+  public void gameIsLost() {
+
+  }
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     Game game = new Game();
