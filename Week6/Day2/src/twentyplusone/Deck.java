@@ -35,15 +35,21 @@ public class Deck {
     return getACard;
   }
 
-  public void pullFirst() {
-
+  public Card pullFirst() {
+    Card firstCard = deck.get(0);
+    deck.remove(firstCard);
+    return firstCard;
   }
 
-  public void pullLast() {
-
+  public Card pullLast() {
+    Card lastCard = deck.get(deck.size());
+    deck.remove(lastCard);
+    return lastCard;
   }
 
-  public void pullRandom() {
-
+  public Card pullRandom() {
+    Card randomCard = deck.get((int) Math.random() * deck.size());
+    deck.remove(randomCard);
+    return randomCard;
   }
 }
