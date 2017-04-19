@@ -15,8 +15,10 @@ public class Deck {
   }
 
   public void addCards() {
-    card = new Card();
-    deck.add(card);
+    for(int i = 0; i < 52; i++) {
+      card = new Card();
+      deck.add(card);
+    }
   }
 
 
