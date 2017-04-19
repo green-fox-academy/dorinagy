@@ -8,12 +8,16 @@ import java.util.List;
  */
 public class Deck {
   List<Card> deck;
+  Card card;
 
   public Deck() {
     deck = new ArrayList<>();
   }
 
-  public void addCards() {}
+  public void addCards() {
+    card = new Card();
+    deck.add(card);
+  }
 
 
   public void shuffleDeck() {
