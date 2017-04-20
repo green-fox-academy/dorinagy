@@ -1,0 +1,15 @@
+group 'com.greenfox.dorinagy'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'net.sf.jopt-simple', name: 'jopt-simple', version: '5.0.3'
+}
