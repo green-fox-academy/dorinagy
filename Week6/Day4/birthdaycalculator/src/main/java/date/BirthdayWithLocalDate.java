@@ -1,14 +1,7 @@
 package date;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.Year;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -33,17 +26,9 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
-    LocalDate localDate = LocalDate.now();
-    try {
-      if(localDate == date) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch(NullPointerException e) {
-      e.printStackTrace();
-    }
-    return false;
+    int birthMonth = date.getMonthValue();
+    int birthDay = date.getDayOfMonth();
+    return (birthMonth == LocalDate.now().getMonthValue() && birthDay == LocalDate.now().getDayOfMonth());
   }
 
   @Override
@@ -57,20 +42,13 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
-    int yearInDays = date.getYear() * 365;
-    int monthInDays = date.getMonth().getValue() * 30;
-    int days = date.getDayOfMonth();
-    int birthdayDays = yearInDays + monthInDays + days;
-    LocalDate localDate = LocalDate.now();
-    int localYearInDays = localDate.getYear() * 365;
-    int localMonthInDays = localDate.getMonth().getValue() * 30;
-    int localDay = localDate.getDayOfMonth();
-    int localDays = localYearInDays + localMonthInDays + localDay;
-    if(localDays > birthdayDays) {
-      return localDays - birthdayDays;
-    } else if(localDays > birthdayDays) {
-      return birthdayDays - localDays;
-    } else return 0;
+    int daysToAnniversary;
+    if (LocalDate.now().getDayOfYear() <= date.getDayOfYear()) {
+      daysToAnniversary = date.getDayOfYear() - LocalDate.now().getDayOfYear();
+      } else {
+        daysToAnniversary = date.getDayOfYear() - LocalDate.now().getDayOfYear() + 365;
+      }
+    return daysToAnniversary;
   }
 
   public static void main(String[] args) {
