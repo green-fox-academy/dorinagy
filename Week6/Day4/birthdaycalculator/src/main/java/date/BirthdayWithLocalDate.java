@@ -1,8 +1,14 @@
 package date;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Year;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -12,31 +18,32 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public LocalDate parseDate(String str) {
-    //int year = Integer.parseInt(str.substring(0, 3));
-    //int month = Integer.parseInt(str.substring(5, 6));
-    //int day = Integer.parseInt(str.substring(8, 9));
-    //LocalDate birthdayDate = LocalDate.of(year, month, day);
-
-    LocalDate localDate = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    LocalDate localDate = LocalDate.parse(str, formatter);
     return localDate;
-
-    //return birthdayDate;
   }
 
   @Override
   public String printMonthAndDay(LocalDate date) {
     int month = date.getMonth().getValue();
     int day = date.getDayOfMonth();
-    String string = month + "." + day + ".";
+    String string = month + ". " + day + ".";
     return string;
   }
 
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
     LocalDate localDate = LocalDate.now();
-    if(localDate == date) {
-      return true;
-    } else return false;
+    try {
+      if(localDate == date) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch(NullPointerException e) {
+      e.printStackTrace();
+    }
+    return false;
   }
 
   @Override
