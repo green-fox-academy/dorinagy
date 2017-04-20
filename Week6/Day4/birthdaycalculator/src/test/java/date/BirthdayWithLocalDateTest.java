@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
  * Created by Nagy Dóra on 2017.04.20..
  */
 class BirthdayWithLocalDateTest {
+
   private static final String EXPECTED_DATE_STR = "2016-11-30";
   private static final LocalDate EXPECTED_DATE = LocalDate.parse(EXPECTED_DATE_STR, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 

@@ -1,6 +1,8 @@
 package date;
 
 import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
 import java.util.Scanner;
 
 /**
@@ -10,25 +12,38 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public LocalDate parseDate(String str) {
-    // TODO - return with the parsed date; format is: yyyy-MM-dd
+    //String year = str.substring(0, 3);
+    //String month = str.substring(5, 6);
+    //String day = str.substring(7, 8);
+    //LocalDate localDate;
+    LocalDate localDate = LocalDate.now();
 
-    return null;
+    return localDate;
   }
 
   @Override
   public String printMonthAndDay(LocalDate date) {
-
-    return null;
+    int month = date.getMonth().getValue();
+    int day = date.getDayOfMonth();
+    String string = month + "." + day + ".";
+    return string;
   }
 
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
-    return false;
+    LocalDate localDate = LocalDate.now();
+    if(localDate == date) {
+      return true;
+    } else return false;
   }
 
   @Override
   public int calculateAgeInYears(LocalDate birthday) {
-    return 0;
+    int year = birthday.getYear();
+    LocalDate localDate = LocalDate.now();
+    int currentYear = localDate.getYear();
+    int ageInYears = currentYear - year;
+    return ageInYears;
   }
 
   @Override
