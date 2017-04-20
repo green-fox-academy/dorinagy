@@ -12,13 +12,15 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public LocalDate parseDate(String str) {
-    //String year = str.substring(0, 3);
-    //String month = str.substring(5, 6);
-    //String day = str.substring(7, 8);
-    //LocalDate localDate;
-    LocalDate localDate = LocalDate.now();
+    //int year = Integer.parseInt(str.substring(0, 3));
+    //int month = Integer.parseInt(str.substring(5, 6));
+    //int day = Integer.parseInt(str.substring(8, 9));
+    //LocalDate birthdayDate = LocalDate.of(year, month, day);
 
+    LocalDate localDate = LocalDate.now();
     return localDate;
+
+    //return birthdayDate;
   }
 
   @Override
@@ -48,7 +50,20 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
-    return 0;
+    int yearInDays = date.getYear() * 365;
+    int monthInDays = date.getMonth().getValue() * 30;
+    int days = date.getDayOfMonth();
+    int birthdayDays = yearInDays + monthInDays + days;
+    LocalDate localDate = LocalDate.now();
+    int localYearInDays = localDate.getYear() * 365;
+    int localMonthInDays = localDate.getMonth().getValue() * 30;
+    int localDay = localDate.getDayOfMonth();
+    int localDays = localYearInDays + localMonthInDays + localDay;
+    if(localDays > birthdayDays) {
+      return localDays - birthdayDays;
+    } else if(localDays > birthdayDays) {
+      return birthdayDays - localDays;
+    } else return 0;
   }
 
   public static void main(String[] args) {
