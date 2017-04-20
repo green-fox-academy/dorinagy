@@ -6,6 +6,6 @@ package markerannotation;
 public class ScreenApp {
 
   public static void main(String[] args) {
-    
+
   }
 }
