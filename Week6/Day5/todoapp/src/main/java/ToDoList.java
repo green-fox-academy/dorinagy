@@ -36,6 +36,7 @@ public class ToDoList {
         }
       }
     } catch (Exception ex) {
+      ex.printStackTrace();
     }
   }
 

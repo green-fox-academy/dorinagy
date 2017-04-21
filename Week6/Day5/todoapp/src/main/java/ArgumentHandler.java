@@ -36,6 +36,8 @@ public class ArgumentHandler {
           err = "Unable to remove, no index provided";
         } else if(options.has("-c") && options.valueOf("-c").toString().equals("")) {
           err = "Unable to check, no index provided";
+        } else if(!todoList.isIndexValid((int) options.valueOf("-r")) || !todoList.isIndexValid((int) options.valueOf("-c"))) {
+          err = "Index is out of exception";
         }
         System.out.println(err);
       }
