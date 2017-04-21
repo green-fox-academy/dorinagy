@@ -10,8 +10,6 @@ public class ToDo {
   private static int id;
   private DayOfWeek createdAt;
   private DayOfWeek completedAt;
-  //final static String DONE = "[x] ";
-  //final static String UNDONE = "[ ] ";
   final static String ID = "[" + id + "] ";
 
   public ToDo(String task) {

@@ -18,7 +18,7 @@ public class ArgumentHandler {
     } else {
       try {
         if(options.has("-a")) {
-          todoList.addTask(ToDo.UNDONE + options.valueOf("-a").toString());
+          todoList.addTask(ToDo.ID + options.valueOf("-a").toString());
         } else if(options.has("-r")) {
           todoList.removeTask((int) options.valueOf("-r") - 1);
         } else if(options.has("-c")) {
