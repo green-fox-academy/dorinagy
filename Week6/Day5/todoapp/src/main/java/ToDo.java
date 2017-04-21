@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -26,4 +27,9 @@ public class ToDo {
   public void check() {
     task = DONE + task.substring(UNDONE.length());
   }
+
+  /*public LocalDate complitionTime(String task) {
+    this.task = task;
+    return ;
+  }*/
 }

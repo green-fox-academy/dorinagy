@@ -9,15 +9,13 @@ import java.util.ArrayList;
 public class ToDoList {
   private ArrayList<ToDo> listOfTasks;
 
-  public ToDoList()
-  {
+  public ToDoList() {
     listOfTasks = new ArrayList<>();
     loadTasks();
   }
 
   public void printTasks() {
-    if (listOfTasks.size() == 0)
-    {
+    if (listOfTasks.size() == 0) {
       System.out.println("No todos for today! :)");
     } else {
       for (int i = 0; i < listOfTasks.size(); i++) {

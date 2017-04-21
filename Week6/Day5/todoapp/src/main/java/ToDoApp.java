@@ -32,14 +32,14 @@ public class ToDoApp {
         todoList.saveTasks();
       } catch (Exception ex) {
         String err = "Unable to ";
-        err += ((args[0].equals("-a"))? "add" :
-                (args[0].equals("-r"))? "remove" :
-                        (args[0].equals("-c"))? "check" :
+        err += ((args[0].equals("-a")) ? "add" :
+                (args[0].equals("-r")) ? "remove" :
+                        (args[0].equals("-c")) ? "check" :
                                 "") + ": ";
-        err += (ex instanceof ArrayIndexOutOfBoundsException)?
-                ((args[0].equals("-a"))? "no task provided" : "no index provided") :
-                (ex instanceof IndexOutOfBoundsException)? "index is out of bound" :
-                        (ex instanceof NumberFormatException)? "index is not a number" :
+        err += (ex instanceof ArrayIndexOutOfBoundsException) ?
+                ((args[0].equals("-a")) ? "no task provided" : "no index provided") :
+                (ex instanceof IndexOutOfBoundsException) ? "index is out of bound" :
+                        (ex instanceof NumberFormatException) ? "index is not a number" :
                                 "";
         System.out.println(err);
       }
