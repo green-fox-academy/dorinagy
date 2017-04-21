@@ -12,9 +12,7 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
   @Override
   public LocalDate parseDate(String str) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    LocalDate date = LocalDate.parse(str, formatter);
-    System.out.println(date);
-    return date;
+    return LocalDate.parse(str, formatter);
   }
 
   @Override
