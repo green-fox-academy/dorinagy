@@ -26,11 +26,10 @@ public class ToDoList {
 
   public void loadTasks() {
     Path filePath = Paths.get("tasks");
-
     try {
       for (String line : Files.readAllLines(filePath)) {
-        if (!line.startsWith(ToDo.UNDONE) && !line.startsWith(ToDo.DONE)) {
-          addTask(ToDo.UNDONE + line);
+        if (!line.startsWith(ToDo.ID)) {
+          addTask(ToDo.ID + line);
         } else {
           addTask(line);
         }

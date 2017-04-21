@@ -1,3 +1,4 @@
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -6,11 +7,12 @@ import java.util.Date;
  */
 public class ToDo {
   private String task;
-  private int id;
-  private Date createdAt;
-  private Date completedAt;
-  final static String DONE = "[x] ";
-  final static String UNDONE = "[ ] ";
+  private static int id;
+  private DayOfWeek createdAt;
+  private DayOfWeek completedAt;
+  //final static String DONE = "[x] ";
+  //final static String UNDONE = "[ ] ";
+  final static String ID = "[" + id + "] ";
 
   public ToDo(String task) {
     setTask(task);
@@ -22,14 +24,21 @@ public class ToDo {
 
   public void setTask(String task) {
     this.task = task;
+    createdAt = LocalDate.now().getDayOfWeek();
   }
 
   public void check() {
-    task = DONE + task.substring(UNDONE.length());
+    task = ID + task.substring(ID.length());
+    completedAt = LocalDate.now().getDayOfWeek();
   }
 
-  /*public LocalDate complitionTime(String task) {
+  public void setID(int id) {
+    this.id = id;
+  }
+
+  public int complitionTime(String task) {
     this.task = task;
-    return ;
-  }*/
+    int timeRequired = completedAt.getValue() - createdAt.getValue();
+    return timeRequired;
+  }
 }
