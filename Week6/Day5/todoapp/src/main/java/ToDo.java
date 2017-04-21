@@ -7,10 +7,10 @@ import java.util.Date;
  */
 public class ToDo {
   private String task;
-  private static int id;
+  private  int id;
   private DayOfWeek createdAt;
   private DayOfWeek completedAt;
-  final static String ID = "[" + id + "] ";
+  private String ID = "[" + id + "] ";
 
   public ToDo(String task) {
     setTask(task);
@@ -32,6 +32,10 @@ public class ToDo {
 
   public void setID(int id) {
     this.id = id;
+  }
+
+  public int getID() {
+    return id;
   }
 
   public int complitionTime(String task) {
