@@ -12,16 +12,16 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
   @Override
   public LocalDate parseDate(String str) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    LocalDate localDate = LocalDate.parse(str, formatter);
-    return localDate;
+    LocalDate date = LocalDate.parse(str, formatter);
+    System.out.println(date);
+    return date;
   }
 
   @Override
   public String printMonthAndDay(LocalDate date) {
     int month = date.getMonth().getValue();
     int day = date.getDayOfMonth();
-    String string = month + ". " + day + ".";
-    return string;
+    return month + ". " + day + ".";
   }
 
   @Override
