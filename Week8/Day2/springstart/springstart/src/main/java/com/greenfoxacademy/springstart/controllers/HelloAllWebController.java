@@ -44,11 +44,11 @@ public class HelloAllWebController {
   }
 
   private String generateRandomColor() {
-    String rgbFormat = "rgb(%f,%f,%f)";
+    String rgbFormat = "rgb(%d,%d,%d)";
     Random random = new Random();
-    float r = random.nextFloat();
-    float g = random.nextFloat();
-    float b = random.nextFloat();
+    int r = random.nextInt(255);
+    int g = random.nextInt(255);
+    int b = random.nextInt(255);
     return String.format(rgbFormat, r, g, b);
   }
 
