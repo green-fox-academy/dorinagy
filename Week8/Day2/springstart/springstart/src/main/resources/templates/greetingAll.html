@@ -5,6 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'"/>
+<table>
+    <tr th:each="hello, iterStat : ${hellos}">
+        <td th:text="${hello} + ', ' + ${name} + '!' " th:style="'color: ' + ${color[iterStat.index]} + ';' + ' font-size: ' + ${fontSize[iterStat.index]} + ';'"></td>
+    </tr>
+</table>
 </body>
 </html>
