@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:text="'Name: ' + ${name()} + ', balance: ' + ${balance()} + ', animal type: ' + ${animalType()} ">
+<p th:text="'Name: ' + ${account.getName} + ', balance: ' + ${#numbers.formatDecimal(account.getBalance,0,2)} + 'Zebra' + ', animal type: ' + ${account.getAnimalType} ">
     .</p>
 </body>
 </html>

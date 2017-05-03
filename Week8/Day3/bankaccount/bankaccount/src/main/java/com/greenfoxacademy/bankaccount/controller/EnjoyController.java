@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class EnjoyController {
+
   @RequestMapping(value = "/exercise4")
   public String textUtext(Model model) {
     model.addAttribute("text", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
-    return "exercise4";
+    return "Enjoy";
   }
 }

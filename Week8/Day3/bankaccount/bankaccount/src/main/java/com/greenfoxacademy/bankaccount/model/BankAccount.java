@@ -7,16 +7,25 @@ import lombok.Getter;
  */
 public class BankAccount {
 
-  @Getter
   String name;
-  @Getter
-  String balance;
-  @Getter
+  Integer balance;
   String animalType;
 
-  public BankAccount(String name, String animalType, String balance) {
+  public BankAccount(String name, Integer balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String animalType() {
+    return animalType;
+  }
+
+  public int balance() {
+    return balance;
   }
 }
