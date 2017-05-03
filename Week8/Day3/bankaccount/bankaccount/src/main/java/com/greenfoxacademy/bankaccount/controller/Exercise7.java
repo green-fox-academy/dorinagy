@@ -23,7 +23,7 @@ public class Exercise7 {
     accountList.add(new BankAccount7("Lei", String.format("%s.00", 500), "turtle", false));
     accountList.add(new BankAccount7("Mao", String.format("%s.00", 200), "cat", false));
     accountList.add(new BankAccount7("Albert", String.format("%s.00", 540), "parrot", false));
-    accountList.add(new BankAccount7("Simba", String.format("%s.00", 30), "King", true));
+    accountList.add(new BankAccount7("Simba", String.format("%s.00", 300), "lion", true));
     model.addAttribute("accountList", accountList);
     return "exercise7";
   }
