@@ -17,7 +17,7 @@
     <tr th:each="account : ${accountList}" th:style="${account.isKing()} ? 'color: yellow'">
         <td th:text="${accountStat.index} + 1">Index</td>
         <td th:text="${account.getName()}">Name</td>
-        <td th:text="${account.getBalance()}">Balance</td>
+        <td th:text="${account.getBalance() + ' Zebra '}">Balance</td>
         <td th:text="${account.getAnimalType()}">Type</td>
         <td th:text="${account.isKing()} ? 'King' : 'Not King'">King</td>
         <div th:switch="${account.isBad()}">

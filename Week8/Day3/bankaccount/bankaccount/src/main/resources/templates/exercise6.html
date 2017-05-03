@@ -16,7 +16,7 @@
     <tr th:each="listelement, iter : ${accountList}">
         <td th:text="${iter.index} + 1">Index</td>
         <td th:text="${listelement.getName()}">Name</td>
-        <td th:text="${listelement.getBalance()}">Balance</td>
+        <td th:text="${listelement.getBalance()} + ' Zebra '">Balance</td>
         <td th:text="${listelement.getAnimalType()}">Type</td>
     </tr>
 </table>
