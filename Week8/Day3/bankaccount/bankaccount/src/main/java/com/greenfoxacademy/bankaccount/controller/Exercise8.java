@@ -1,6 +1,5 @@
 package com.greenfoxacademy.bankaccount.controller;
 
-import com.greenfoxacademy.bankaccount.model.BankAccount7;
 import com.greenfoxacademy.bankaccount.model.BankAccount8;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
