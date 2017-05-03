@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by Nagy Dóra on 2017.05.03..
  */
 @Controller
-public class Exercise4Controller {
+public class Exercise4 {
 
   @RequestMapping(value = "/exercise4")
   public String textUtext(Model model) {

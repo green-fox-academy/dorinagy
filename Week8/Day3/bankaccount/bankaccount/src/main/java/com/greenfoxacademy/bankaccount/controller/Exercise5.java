@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Nagy Dóra on 2017.05.03..
  */
 @Controller
-public class ListBankAccountsController {
+public class Exercise5 {
 
   @RequestMapping(value = "/exercise5")
   public String bankAccountList(Model model){
@@ -22,8 +22,7 @@ public class ListBankAccountsController {
     accountList.add(new BankAccount("Lei", String.format("%s.00", 500), "turtle"));
     accountList.add(new BankAccount("Mao", String.format("%s.00", 200), "cat"));
     accountList.add(new BankAccount("Albert", String.format("%s.00", 540), "parrot"));
-    accountList.add(new BankAccount("Simba", String.format("%s.00", 30), "King"));
     model.addAttribute("accountList", accountList);
-    return "ListAccounts";
+    return "exercise5";
   }
 }
