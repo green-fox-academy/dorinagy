@@ -1,17 +1,15 @@
 package com.greenfoxacademy.bankaccount.model;
 
-import lombok.Getter;
-
 /**
  * Created by Nagy Dóra on 2017.05.03..
  */
 public class BankAccount {
 
   String name;
-  Integer balance;
+  String balance;
   String animalType;
 
-  public BankAccount(String name, Integer balance, String animalType) {
+  public BankAccount(String name, String balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
@@ -21,11 +19,11 @@ public class BankAccount {
     return name;
   }
 
-  public String animalType() {
+  public String getAnimalType() {
     return animalType;
   }
 
-  public int balance() {
+  public String getBalance() {
     return balance;
   }
 }

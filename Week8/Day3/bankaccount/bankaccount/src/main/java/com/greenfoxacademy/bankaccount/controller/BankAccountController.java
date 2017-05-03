@@ -14,7 +14,7 @@ public class BankAccountController {
 
   @RequestMapping(value = "/exercise1")
   public String showAccount(Model model) {
-    BankAccount account = new BankAccount("Simba", 2000, "lion");
+    BankAccount account = new BankAccount("Simba", String.format("%s.00", 2000), "lion");
     model.addAttribute("account", account);
     return "showFields";
   }
