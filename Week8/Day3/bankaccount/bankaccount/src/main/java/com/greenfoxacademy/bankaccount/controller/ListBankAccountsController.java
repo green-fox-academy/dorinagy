@@ -22,6 +22,7 @@ public class ListBankAccountsController {
     accountList.add(new BankAccount("Lei", String.format("%s.00", 500), "turtle"));
     accountList.add(new BankAccount("Mao", String.format("%s.00", 200), "cat"));
     accountList.add(new BankAccount("Albert", String.format("%s.00", 540), "parrot"));
+    accountList.add(new BankAccount("Simba", String.format("%s.00", 30), "King"));
     model.addAttribute("accountList", accountList);
     return "ListAccounts";
   }
