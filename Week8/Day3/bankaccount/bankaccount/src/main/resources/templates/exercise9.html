@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #1</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Type</th>
+        <th>King</th>
+        <th>Good or Bad</th>
+    </tr>
+    <tr th:each="account : ${accountList}" th:style="${account.isKing()} ? 'color: yellow'">
+        <td th:text="${accountStat.index} + 1">Index</td>
+        <td th:text="${account.getName()}">Name</td>
+        <td th:text="${account.getBalance()}">Balance</td>
+        <td th:text="${account.getAnimalType()}">Type</td>
+        <td th:text="${account.isKing()} ? 'King' : 'Not King'">King</td>
+        <div th:switch="${account.isBad()}">
+            <td th:case="true"> Bad Guy</td>
+            <td th:case="false"> Good One</td>
+        </div>
+    </tr>
+</table>
+</body>
+</html>

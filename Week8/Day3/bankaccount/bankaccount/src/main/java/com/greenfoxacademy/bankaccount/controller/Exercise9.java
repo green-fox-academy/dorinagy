@@ -14,8 +14,8 @@ import java.util.List;
  */
 @Controller
 public class Exercise9 {
-  
-  @RequestMapping(value = "/exercise8")
+
+  @RequestMapping(value = "/exercise9")
   public String bankAccountList(Model model){
     List<BankAccount9> accountList = new ArrayList<>();
     accountList.add(new BankAccount9("Zordon", String.format("%s.00", 4000), "lion", false, true));
@@ -25,6 +25,6 @@ public class Exercise9 {
     accountList.add(new BankAccount9("Rafiki", String.format("%s.00", 540), "mandrill", false, false));
     accountList.add(new BankAccount9("Simba", String.format("%s.00", 300), "lion", true, false));
     model.addAttribute("accountList", accountList);
-    return "exercise8";
+    return "exercise9";
   }
 }
