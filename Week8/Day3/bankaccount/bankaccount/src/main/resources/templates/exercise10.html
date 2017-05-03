@@ -26,9 +26,7 @@
             <td th:case="false"> Good One</td>
         </div>
         <td>
-            <form action="/hit" th:object="${account.getBalance()}">
-                <input type="button" value="Add Zebra"/>
-            </form>
+            <a th:href="${'/hit?id=' + accountStat.index}">+10</a>
         </td>
     </tr>
 </table>
