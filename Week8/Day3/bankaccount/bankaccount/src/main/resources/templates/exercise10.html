@@ -13,6 +13,7 @@
         <th>Type</th>
         <th>King</th>
         <th>Good or Bad</th>
+        <th>Form</th>
     </tr>
     <tr th:each="account : ${accountList}" th:style="${account.isKing()} ? 'color: yellow'">
         <td th:text="${accountStat.index} + 1">Index</td>
@@ -24,6 +25,11 @@
             <td th:case="true"> Bad Guy</td>
             <td th:case="false"> Good One</td>
         </div>
+        <td>
+            <form action="/hit" th:object="${account.getBalance()}">
+            <input type="button" value="Add Zebra"/>
+        </form></td>
+
     </tr>
 </table>
 </body>
