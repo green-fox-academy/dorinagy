@@ -1,6 +1,6 @@
-package com.greenfox.hellobean.config;
+package com.greenfox.colors.config;
 
-import com.greenfox.hellobean.HelloWorld;
+import com.greenfox.colors.RedColor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Configuration;
  * Created by Nagy Dóra on 2017.05.04..
  */
 @Configuration
-public class HelloWorldConfig {
+public class ColorConfig {
 
   @Bean
-  public HelloWorld helloWorld(){
-    return new HelloWorld();
+  public RedColor redColor() {
+    return new RedColor();
   }
 }
