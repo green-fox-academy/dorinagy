@@ -1,4 +1,4 @@
-package com.greenfox.config;
+package com.greenfox.com.greenfox.hellobean.application.config;
 
 import org.springframework.context.annotation.Configuration;
 

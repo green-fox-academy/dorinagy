@@ -1,7 +1,6 @@
-package com.greenfox.application;
+package com.greenfox.com.greenfox.hellobean.application;
 
-import com.greenfox.HelloWorld;
-import com.greenfox.config.HelloWorldConfig;
+import com.greenfox.com.greenfox.hellobean.application.config.HelloWorldConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

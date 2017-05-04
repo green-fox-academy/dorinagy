@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.com.greenfox.hellobean.application;
 
 /**
  * Created by Nagy Dóra on 2017.05.04..
