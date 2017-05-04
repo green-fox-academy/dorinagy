@@ -1,5 +1,6 @@
 package com.greenfox.colors.config;
 
+import com.greenfox.colors.MyColor;
 import com.greenfox.colors.RedColor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +12,13 @@ import org.springframework.context.annotation.Configuration;
 public class ColorConfig {
 
   @Bean
-  public RedColor redColor() {
+  public MyColor redColor() {
     return new RedColor();
   }
+
+  @Bean
+  public MyColor blueColor() {
+    return new BlueColor();
+  }
 }
+

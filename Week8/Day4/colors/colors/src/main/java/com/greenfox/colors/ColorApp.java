@@ -1,5 +1,6 @@
 package com.greenfox.colors;
 
+import com.greenfox.colors.config.BlueColor;
 import com.greenfox.colors.config.ColorConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,5 +19,7 @@ public class ColorApp {
 
     RedColor redColor = ctx.getBean(RedColor.class);
     redColor.printColor();
+    BlueColor blueColor = ctx.getBean(BlueColor.class);
+    blueColor.printColor();
   }
 }
