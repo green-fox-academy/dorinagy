@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by Nagy Dóra on 2017.05.04..
  */
 @Controller
-public class FoxClubController {
+public class MainController {
 
-  @RequestMapping(value = "")
+  @RequestMapping(value = "/")
   public String showStaticPage() {
     return "index";
   }
