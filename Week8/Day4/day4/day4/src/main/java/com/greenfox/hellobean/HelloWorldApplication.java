@@ -1,6 +1,6 @@
-package com.greenfox.com.greenfox.hellobean.application;
+package com.greenfox.hellobean;
 
-import com.greenfox.com.greenfox.hellobean.application.config.HelloWorldConfig;
+import com.greenfox.hellobean.config.HelloWorldConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -10,7 +10,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 @SpringBootApplication
 public class HelloWorldApplication {
-
   public static void main(String[] args) {
     SpringApplication.run(HelloWorldApplication.class, args);
 

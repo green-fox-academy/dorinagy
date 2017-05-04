@@ -1,4 +1,4 @@
-package com.greenfox.com.greenfox.hellobean.application;
+package com.greenfox.hellobean;
 
 /**
  * Created by Nagy Dóra on 2017.05.04..
@@ -6,10 +6,9 @@ package com.greenfox.com.greenfox.hellobean.application;
 public class HelloWorld {
 
   private String message;
-
-  public void setMessage(String message){
-    this.message  = message;
-  }
+   public void setMessage(String message){
+     this.message  = message;
+   }
 
   public String getMessage(){
     System.out.println("Your message: " + message);
