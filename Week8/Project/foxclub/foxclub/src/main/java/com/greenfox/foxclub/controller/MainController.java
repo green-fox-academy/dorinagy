@@ -18,4 +18,9 @@ public class MainController {
   public String showNutrition() {
     return "nutritionstore";
   }
+
+  @RequestMapping(value = "/trickCenter")
+  public String showTrickCenter() {
+    return "trickcenter";
+  }
 }
