@@ -13,4 +13,9 @@ public class MainController {
   public String showStaticPage() {
     return "index";
   }
+
+  @RequestMapping(value = "/nutritionStore")
+  public String showNutrition() {
+    return "nutritionstore";
+  }
 }
