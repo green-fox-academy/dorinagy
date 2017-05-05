@@ -3,6 +3,7 @@ package com.greenfox.foxclub.controller;
 import com.greenfox.foxclub.models.Fox;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,17 +22,25 @@ public class MainController {
   }
 
   @RequestMapping(value = "/")
-  public String showStaticPage() {
-    return "index";
+  public ModelAndView infoPage() {
+    ModelAndView m = new ModelAndView();
+    m.addObject(fox);
+    m.setViewName("index");
+    return m;
   }
 
   @RequestMapping(value = "/nutritionStore")
-  public String showNutrition() {
-    return "nutritionstore";
+  public ModelAndView showNutrition() {
+    ModelAndView m = new ModelAndView();
+    m.setViewName("nutritionstore");
+    return m;
   }
 
   @RequestMapping(value = "/trickCenter")
-  public String showTrickCenter() {
-    return "trickcenter";
+  public ModelAndView showTrickCenter() {
+    ModelAndView m = new ModelAndView();
+    m.addObject("tricks", tricks);
+    m.setViewName("trickcenter");
+    return m;
   }
 }
