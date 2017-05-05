@@ -12,9 +12,8 @@ public class MainApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MainApplication.class, args);
 
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(FoxConfig.class);
+		//AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(FoxConfig.class);
 
-		Fox fox = ctx.getBean(Fox.class);
-
+		//Fox fox = ctx.getBean(Fox.class);
 	}
 }

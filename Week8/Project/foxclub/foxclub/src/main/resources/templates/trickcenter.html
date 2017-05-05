@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Nutrition Store</title>
+    <title>Trick Center</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <ul>
-    <li>
-        <a th:href="@{'/'}">Information</a>
-    </li>
-    <li>
-        <a th:href="@{'/trickCenter'}">Trick Center</a>
-    </li>
-    <li>
-        <a th:href="@{'/nutritionStore'}">Nutrition Store</a>
-    </li>
+    <li><a th:href="@{'/'}">Information</a></li>
+    <li><a th:href="@{'/trickCenter'}">Trick Center</a></li>
+    <li><a th:href="@{'/nutritionStore'}">Nutrition Store</a></li>
 </ul>
 <table>
-    <form action="/learn-trick">
+    <form action="/learn-trick" th:if="${fox.getTrickListSize()} == 0" th:text="'You know everything! No more tricks available.'">
         <tr>
-            <th>Trick</th>
+            <th>Tricks</th>
         </tr>
-        <tr>
-            <td><input type="list" name="trick"/></td>
+        <tr >
+            <td>
+                <select name="addTrick">
+                    <option th:each="trick : ${fox.getTrickList()}"
+                            th:value="${trick}"
+                            th:text="${trick}">
+                    </option>
+                </select>
+            </td>
             <td><input type="submit" value="Learn"/></td>
         </tr>
     </form>

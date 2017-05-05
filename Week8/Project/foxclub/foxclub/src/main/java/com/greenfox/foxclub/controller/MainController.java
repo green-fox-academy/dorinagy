@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,16 +17,13 @@ import java.util.List;
 @Controller
 public class MainController {
 
+  String[] listOfTricks = {"Cycle", "Write HTML", "Code in Java", "Jump", "Swim", "Fly", "Dance", "Fight"};
+
   @Autowired
   Fox fox;
-  List<String> tricks;
-
-  public MainController() {
-    this.tricks = Arrays.asList("Code in Java", "Swim", "Do Karate", "Fly", "Cycle", "Write HTML", "Jump");
-  }
 
   @RequestMapping(value = "/")
-  public ModelAndView infoPage() {
+  public ModelAndView infoPage(){
     ModelAndView m = new ModelAndView();
     m.addObject(fox);
     m.setViewName("index");
@@ -34,18 +31,31 @@ public class MainController {
   }
 
   @RequestMapping(value = "/nutritionStore")
-  public ModelAndView nutritionStore() {
+  public ModelAndView nutritionStore(){
     ModelAndView m = new ModelAndView();
+    m.addObject(fox);
     m.setViewName("nutritionstore");
     return m;
   }
 
   @RequestMapping(value = "/trickCenter")
-  public ModelAndView trickCenter() {
+  public ModelAndView trickCentre(){
     ModelAndView m = new ModelAndView();
-    m.addObject("tricks", tricks);
+    m.addObject(fox);
+    List<String> remainingTricks = getRemainingTricks(listOfTricks);
+    m.addObject("listOfTricks", remainingTricks);
     m.setViewName("trickcenter");
     return m;
+  }
+
+  private List<String> getRemainingTricks(String[] listOfTricks) {
+    List<String> returnList = new ArrayList<>();
+    for (String trick : listOfTricks ){
+      if(!fox.knowsTrick(trick)) {
+        returnList.add(trick);
+      }
+    }
+    return returnList;
   }
 
   @RequestMapping(value = "/change-nutrition")
@@ -56,8 +66,8 @@ public class MainController {
   }
 
   @GetMapping(value = "/learn-trick")
-  public String addTrick(@RequestParam String trick){
-    fox.addTrick(trick);
+  public String addTrick(@RequestParam String addTrick){
+    fox.addTrick(addTrick);
     return "redirect:";
   }
 }

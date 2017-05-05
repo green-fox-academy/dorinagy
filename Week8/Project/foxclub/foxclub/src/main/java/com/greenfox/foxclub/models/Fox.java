@@ -1,6 +1,7 @@
 package com.greenfox.foxclub.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,15 +10,32 @@ import java.util.List;
 public class Fox {
 
   private String name;
-  private List<String> trickList;
+  private List<String> listOfTricks;
   private String food;
   private String drink;
 
   public Fox() {
     this.name = "Mr Fox";
-    this.trickList = new ArrayList<>();
-    this.food = "nothing";
-    this.drink = "nothing";
+    listOfTricks = new ArrayList<>();
+    this.food = "Apple";
+    this.drink = "Water";
+  }
+
+  public void addTrick(String trick) {
+    listOfTricks.add(trick);
+  }
+
+  public int knownTricks() {
+    return listOfTricks.size();
+  }
+
+  public boolean knowsTrick(String trick) {
+    for (String trickElement : listOfTricks) {
+      if (trickElement.equals(trick)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void setName(String name) {
@@ -32,8 +50,8 @@ public class Fox {
     this.drink = drink;
   }
 
-  public void setTrickList(List trickList) {
-    this.trickList = trickList;
+  public void setTrickList(ArrayList listOfTricks) {
+    this.listOfTricks = listOfTricks;
   }
 
   public String getName() {
@@ -41,7 +59,11 @@ public class Fox {
   }
 
   public List getTrickList() {
-    return trickList;
+    return listOfTricks;
+  }
+
+  public int getTrickListSize() {
+    return listOfTricks.size();
   }
 
   public String getFood() {
@@ -50,9 +72,5 @@ public class Fox {
 
   public String getDrink() {
     return drink;
-  }
-
-  public void addTrick(String trick) {
-    trickList.add(trick);
   }
 }
