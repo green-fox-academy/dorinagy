@@ -11,7 +11,7 @@
     <li><a th:href="@{'/nutritionStore'}">Nutrition Store</a></li>
 </ul>
 <table>
-    <form action="/learn-trick" th:if="${fox.getTrickListSize()} == 0" th:text="'You know everything! No more tricks available.'">
+    <form action="/learn-trick" th:if="${remainingTricks} == 0" th:text="'You know everything! No more tricks available.'">
         <tr>
             <th>Tricks</th>
         </tr>
