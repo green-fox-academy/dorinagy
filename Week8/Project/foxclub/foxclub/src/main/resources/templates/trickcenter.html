@@ -11,14 +11,14 @@
     <li><a th:href="@{'/nutritionStore'}">Nutrition Store</a></li>
 </ul>
 <table>
-    <form action="/learn-trick" th:if="${remainingTricks} == 0" th:text="'You know everything! No more tricks available.'">
+    <form action="/learn-trick" >
         <tr>
             <th>Tricks</th>
         </tr>
         <tr >
             <td>
                 <select name="addTrick">
-                    <option th:each="trick : ${fox.getTrickList()}"
+                    <option th:each="trick : ${listOfTricks}"
                             th:value="${trick}"
                             th:text="${trick}">
                     </option>
@@ -28,5 +28,6 @@
         </tr>
     </form>
 </table>
+<p th:if="${remainingTricks} == 0" th:text="'There are no more tricks to learn.'"></p>
 </body>
 </html>
