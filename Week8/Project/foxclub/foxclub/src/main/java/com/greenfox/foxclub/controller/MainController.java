@@ -56,8 +56,8 @@ public class MainController {
   }
 
   @GetMapping(value = "/learn-trick")
-  public String addTrick(@RequestParam String addTrick){
-    fox.addTrick(addTrick);
+  public String addTrick(@RequestParam String trick){
+    fox.addTrick(trick);
     return "redirect:";
   }
 }
