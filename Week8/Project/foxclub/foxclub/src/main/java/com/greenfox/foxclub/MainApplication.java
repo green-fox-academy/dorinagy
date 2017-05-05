@@ -15,5 +15,6 @@ public class MainApplication {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(FoxConfig.class);
 
 		Fox fox = ctx.getBean(Fox.class);
+
 	}
 }
