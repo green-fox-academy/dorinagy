@@ -11,22 +11,31 @@
     <li><a th:href="@{'/nutritionStore'}">Nutrition Store</a></li>
 </ul>
 <table>
-    <form action="/learn-trick" >
+    <th:block th:if="${remainingTricks} != 0">
+        <form action="/learn-trick" >
+            <tr>
+                <th>Tricks</th>
+            </tr>
+            <tr >
+                <td>
+                    <select name="addTrick">
+                        <option th:each="trick : ${listOfTricks}"
+                                th:value="${trick}"
+                                th:text="${trick}">
+                        </option>
+                    </select>
+                </td>
+                <td><input type="submit" value="Learn"/></td>
+            </tr>
+        </form>
+    </th:block>
+    <th:block th:if="${remainingTricks} == 0">
         <tr>
-            <th>Tricks</th>
-        </tr>
-        <tr >
             <td>
-                <select name="addTrick">
-                    <option th:each="trick : ${listOfTricks}"
-                            th:value="${trick}"
-                            th:text="${trick}">
-                    </option>
-                </select>
+                There are no more tricks to learn.
             </td>
-            <td><input type="submit" value="Learn"/></td>
         </tr>
-    </form>
+    </th:block>
 </table>
 <p th:if="${remainingTricks} == 0" th:text="'There are no more tricks to learn.'"></p>
 </body>
