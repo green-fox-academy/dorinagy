@@ -34,14 +34,14 @@ public class MainController {
   }
 
   @RequestMapping(value = "/nutritionStore")
-  public ModelAndView showNutrition() {
+  public ModelAndView nutritionStore() {
     ModelAndView m = new ModelAndView();
     m.setViewName("nutritionstore");
     return m;
   }
 
   @RequestMapping(value = "/trickCenter")
-  public ModelAndView showTrickCenter() {
+  public ModelAndView trickCenter() {
     ModelAndView m = new ModelAndView();
     m.addObject("tricks", tricks);
     m.setViewName("trickcenter");
