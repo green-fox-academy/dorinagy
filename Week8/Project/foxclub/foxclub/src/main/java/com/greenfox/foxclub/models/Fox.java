@@ -9,18 +9,18 @@ import java.util.List;
 public class Fox {
 
   private String name;
-  private List<String> tricks;
+  private List<String> trickList;
   private String food;
   private String drink;
 
   public Fox() {
     this.name = "Mr Fox";
-    this.tricks = new ArrayList<>();
+    this.trickList = new ArrayList<>();
     this.food = "nothing";
     this.drink = "nothing";
   }
 
   public void addTrick(String trick) {
-    tricks.add(trick);
+    trickList.add(trick);
   }
 }
