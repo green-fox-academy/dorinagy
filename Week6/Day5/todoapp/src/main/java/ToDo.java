@@ -7,10 +7,10 @@ import java.util.Date;
  */
 public class ToDo {
   private String task;
-  private  int id;
+  private int id;
   private DayOfWeek createdAt;
   private DayOfWeek completedAt;
-  private String ID = "[" + id + "] ";
+  public String ID = "[" + id + "] ";
 
   public ToDo(String task) {
     setTask(task);
