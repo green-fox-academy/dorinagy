@@ -1,7 +1,5 @@
 package com.greenfox.todo;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +16,9 @@ public class Todo {
   private String title;
   private boolean isUrgent;
   private boolean isDone;
+
+  public Todo(String s) {
+  }
 
   public int getId() {
     return id;
