@@ -17,6 +17,9 @@ public class Todo {
   private boolean isUrgent;
   private boolean isDone;
 
+  public Todo() {
+  }
+
   public Todo(String s) {
   }
 

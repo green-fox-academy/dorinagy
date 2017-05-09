@@ -18,7 +18,7 @@ public class TodoController {
 
   @RequestMapping(value = {"/", "/list"})
   public String list(Model model) {
-    model.addAttribute("todo");
+    model.addAttribute("todo", todoRepo.findAll());
   return "todo";
   }
 }
