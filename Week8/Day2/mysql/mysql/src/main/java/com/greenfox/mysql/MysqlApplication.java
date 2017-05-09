@@ -20,10 +20,10 @@ public class MysqlApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		todoRepo.save(new Todo("Walk the dog.", false, true));
-		todoRepo.save(new Todo("Feed the cats.", false, false));
-		todoRepo.save(new Todo("Do the homework.", true, false));
-		todoRepo.save(new Todo("Watch a movie.", false, false));
-		todoRepo.save(new Todo("Make dinner.", true, true));
+		todoRepo.save(new Todo("Walk the dog", false, true));
+		todoRepo.save(new Todo("Feed the cats", false, false));
+		todoRepo.save(new Todo("Do the homework", true, false));
+		todoRepo.save(new Todo("Watch a movie", false, false));
+		todoRepo.save(new Todo("Make dinner", true, true));
 	}
 }

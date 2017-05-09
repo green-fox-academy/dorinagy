@@ -1,8 +1,24 @@
 body {
+    font-family: Calibri Light, sans-serif;
     width: 600px;
-    background-color: antiquewhite;
+}
+
+table {
+    border: solid black 1px;
+    background-color: wheat;
+    width: 100%;
+}
+
+th {
+    text-align: center;
 }
 
 td {
-    border: 1px solid dimgrey;
+    text-align: left;
+    border: solid black 1px;
+    background-color: white;
+}
+
+h1 {
+    color: #800000;
 }
