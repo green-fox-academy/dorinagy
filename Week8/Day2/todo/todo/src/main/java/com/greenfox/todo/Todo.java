@@ -20,7 +20,8 @@ public class Todo {
   public Todo() {
   }
 
-  public Todo(String s) {
+  public Todo(String title) {
+    this.title = title;
   }
 
   public int getId() {
