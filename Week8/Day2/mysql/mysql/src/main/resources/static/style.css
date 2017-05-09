@@ -4,6 +4,7 @@ body {
 }
 
 table {
+    margin-top: 20px;
     border: solid black 1px;
     background-color: wheat;
     width: 100%;
