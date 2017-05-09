@@ -20,8 +20,10 @@ public class Todo {
   public Todo() {
   }
 
-  public Todo(String title) {
+  public Todo(String title, boolean isDone, boolean isUrgent) {
     this.title = title;
+    this.isDone = isDone;
+    this.isUrgent = isUrgent;
   }
 
   public int getId() {
