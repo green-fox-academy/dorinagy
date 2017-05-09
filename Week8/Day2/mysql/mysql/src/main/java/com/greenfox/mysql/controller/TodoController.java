@@ -32,4 +32,9 @@ public class TodoController {
     }
     return "todo";
   }
+
+  @RequestMapping(value = "/add")
+  public String addTodo(Model model) {
+    return "add_todo";
+  }
 }
