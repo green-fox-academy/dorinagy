@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by Nagy Dóra on 2017.05.09..
  */
 @Controller
+@RequestMapping(value = "/todo")
 public class TodoController {
 
   @Autowired
