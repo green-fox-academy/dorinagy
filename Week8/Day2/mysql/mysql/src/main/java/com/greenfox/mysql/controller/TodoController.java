@@ -1,5 +1,6 @@
 package com.greenfox.mysql.controller;
 
+import com.greenfox.mysql.model.Todo;
 import com.greenfox.mysql.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +35,13 @@ public class TodoController {
   }
 
   @RequestMapping(value = "/add")
-  public String addTodo(Model model) {
+  public String addTodo() {
     return "add_todo";
+  }
+
+  @RequestMapping("/addtodo")
+  public String addNew(String title) {
+    todoRepo.save(new Todo(title));
+    return "redirect:/todo/list";
   }
 }
