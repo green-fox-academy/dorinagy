@@ -16,7 +16,7 @@
         <th>URGENT</th>
     </tr>
     <tr th:each="todo : ${todos}">
-        <td th:text="${todoStat.index} + 1">id</td>
+        <td th:text="${todo.id}">id</td>
         <td th:text="${todo.getTitle()}">action</td>
         <td th:text="${todo.isDone()}">done</td>
         <td th:text="${todo.isUrgent()}">urgent</td>
