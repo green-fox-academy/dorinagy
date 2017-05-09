@@ -1,4 +1,4 @@
-package com.greenfox.todo.model;
+package com.greenfox.todo;
 
 /**
  * Created by Nagy Dóra on 2017.05.09..

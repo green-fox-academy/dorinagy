@@ -1,4 +1,4 @@
-package com.greenfox.todo.controller;
+package com.greenfox.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

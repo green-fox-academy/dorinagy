@@ -1,6 +1,6 @@
-package com.greenfox.todo.repository;
+package com.greenfox.repository;
 
-import com.greenfox.todo.model.Todo;
+import com.greenfox.todo.Todo;
 import org.springframework.data.repository.CrudRepository;
 
 /**

@@ -1,4 +1,4 @@
-package com.greenfox.todo;
+package com.greenfox;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
