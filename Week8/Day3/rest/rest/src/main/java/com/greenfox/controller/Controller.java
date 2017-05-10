@@ -1,6 +1,7 @@
 package com.greenfox.controller;
 import com.greenfox.Doubling;
 
+import com.greenfox.Greeter;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,12 @@ public class Controller {
   }
 
   @RequestMapping(value = "/doubling", method = RequestMethod.GET)
-  public Doubling doubling(@RequestParam(value = "input", required = true) int input) {
+  public Doubling doubling(@RequestParam(value = "input") int input) {
     return new Doubling(input, input * 2);
+  }
+
+  @RequestMapping(value = "/greeter")
+  public Greeter greeter (@RequestParam(value = "name") String name, @RequestParam(value = "title") String title) {
+    return new Greeter(name, title);
   }
 }
