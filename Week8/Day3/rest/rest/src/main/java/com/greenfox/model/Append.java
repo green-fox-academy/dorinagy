@@ -1,4 +1,4 @@
-package com.greenfox;
+package com.greenfox.model;
 
 /**
  * Created by Nagy Dóra on 2017.05.10..
