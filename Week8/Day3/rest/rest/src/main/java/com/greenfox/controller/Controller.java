@@ -1,4 +1,5 @@
 package com.greenfox.controller;
+import com.greenfox.Append;
 import com.greenfox.Doubling;
 
 import com.greenfox.Greeter;
@@ -27,4 +28,11 @@ public class Controller {
   public Greeter greeter (@RequestParam(value = "name") String name, @RequestParam(value = "title") String title) {
     return new Greeter(name, title);
   }
+
+  @RequestMapping("/appenda/{appendable}")
+  public Append appenda(@PathVariable(value = "appendable", required = true) String input) {
+    return new Append(input);
+  }
+
+  
 }
