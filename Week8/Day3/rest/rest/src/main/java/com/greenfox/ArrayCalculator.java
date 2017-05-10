@@ -1,4 +1,7 @@
-package com.greenfox.model;
+package com.greenfox;
+
+import com.greenfox.model.ErrorMessage;
+import com.greenfox.model.ResponseObject;
 
 /**
  * Created by Nagy Dóra on 2017.05.10..

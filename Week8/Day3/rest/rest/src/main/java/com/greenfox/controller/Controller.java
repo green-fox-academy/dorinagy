@@ -1,5 +1,6 @@
 package com.greenfox.controller;
 
+import com.greenfox.ArrayCalculator;
 import com.greenfox.model.*;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.RestController;
