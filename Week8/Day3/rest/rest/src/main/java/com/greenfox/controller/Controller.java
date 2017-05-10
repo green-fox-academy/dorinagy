@@ -2,8 +2,8 @@ package com.greenfox.controller;
 import com.greenfox.Doubling;
 
 import com.greenfox.Greeter;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 public class Controller {
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
-  public String handleMissingInput() {
-    return "error: " + "Please provide an input!";
+  public String handleMissingError(MissingServletRequestParameterException e) {
+    return "Missing parameter: " + e.getParameterName();
   }
 
-  @RequestMapping(value = "/doubling", method = RequestMethod.GET)
-  public Doubling doubling(@RequestParam(value = "input") int input) {
-    return new Doubling(input, input * 2);
+  @RequestMapping(value = "/doubling")
+  public Doubling doubling(@RequestParam(value = "input") Integer input) {
+      return new Doubling(input, input * 2);
   }
 
   @RequestMapping(value = "/greeter")
