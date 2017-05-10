@@ -47,4 +47,9 @@ public class Controller {
     }
     return dountil;
   }
+
+  @RequestMapping(value = "/arrays/{what}")
+  public ResponseObject arrays(@RequestBody(required = false) ArrayCalculator arrayCalculator) {
+  return arrayCalculator.createResult();
+  }
 }
