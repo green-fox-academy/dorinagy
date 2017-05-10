@@ -23,7 +23,7 @@ public class Controller {
   }
 
   @RequestMapping(value = "/greeter")
-  public ResponseObject greeter (@RequestParam String name, @RequestParam String title) {
+  public ResponseObject greeter(@RequestParam String name, @RequestParam String title) {
     return new Greeter(name, title);
   }
 
@@ -43,7 +43,7 @@ public class Controller {
         return new ErrorMessage("Please enter 'sum' or 'factor'!");
       }
     } else {
-    return new ErrorMessage("Please provide a number!");
+      return new ErrorMessage("Please provide a number!");
     }
     return dountil;
   }
