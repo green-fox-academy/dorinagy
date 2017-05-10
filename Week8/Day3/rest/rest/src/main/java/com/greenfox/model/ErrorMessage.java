@@ -5,13 +5,13 @@ package com.greenfox.model;
  */
 public class ErrorMessage implements ResponseObject {
 
-  String error;
+  private String error;
 
   public ErrorMessage(String error) {
     this.error = error;
   }
 
-  public ErrorMessage() {
-    this.error = error;
+  public String getError() {
+    return error;
   }
 }
