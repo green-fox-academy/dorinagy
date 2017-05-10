@@ -1,8 +1,6 @@
 package com.greenfox.controller;
-import com.greenfox.Append;
-import com.greenfox.Doubling;
 
-import com.greenfox.Greeter;
+import com.greenfox.model.*;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
@@ -15,24 +13,38 @@ import org.springframework.web.bind.annotation.*;
 public class Controller {
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
-  public String handleMissingError(MissingServletRequestParameterException e) {
-    return "Missing parameter: " + e.getParameterName();
+  public String missingRequestParameterHandler(MissingServletRequestParameterException e) {
+    return String.format("Please provide %s!", e.getParameterName());
   }
 
   @RequestMapping(value = "/doubling")
-  public Doubling doubling(@RequestParam(value = "input") Integer input) {
-      return new Doubling(input, input * 2);
+  public ResponseObject doubling(@RequestParam(value = "input") Integer input) {
+    return new Doubling(input, input * 2);
   }
 
   @RequestMapping(value = "/greeter")
-  public Greeter greeter (@RequestParam(value = "name") String name, @RequestParam(value = "title") String title) {
+  public ResponseObject greeter (@RequestParam String name, @RequestParam String title) {
     return new Greeter(name, title);
   }
 
-  @RequestMapping("/appenda/{appendable}")
-  public Append appenda(@PathVariable(value = "appendable", required = true) String input) {
-    return new Append(input);
+  @RequestMapping(value = "/appenda/{appendable}")
+  public ResponseObject appenda(@PathVariable(value = "appendable") String appendable) {
+    return new Append(appendable);
   }
 
-  
+  @RequestMapping(value = "/dountil/{what}")
+  public ResponseObject dountil(@RequestBody Dountil dountil, @PathVariable(value = "what") String what) {
+    if (dountil.notNegative()) {
+      if (what.equals("sum")) {
+        dountil.sum();
+      } else if (what.equals("factor")) {
+        dountil.factor();
+      } else {
+        return new ErrorMessage("Please enter 'sum' or 'factor'!");
+      }
+    } else {
+    return new ErrorMessage("Please provide a number!");
+    }
+    return dountil;
+  }
 }
