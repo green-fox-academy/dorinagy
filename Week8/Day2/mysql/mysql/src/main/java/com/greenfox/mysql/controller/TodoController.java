@@ -33,14 +33,8 @@ public class TodoController {
     return "add_todo";
   }
 
-  @PostMapping(value = "/add")
-  public String saveTodo(Todo todo) {
-    todoRepo.save(todo);
-    return "redirect:/todo/";
-  }
-
   @RequestMapping("/addtodo")
-  public String addNew(String title) {
+  public String saveNew(String title) {
     todoRepo.save(new Todo(title));
     return "redirect:/todo/list";
   }
