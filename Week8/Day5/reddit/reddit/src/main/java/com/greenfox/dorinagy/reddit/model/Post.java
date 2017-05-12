@@ -20,6 +20,7 @@ public class Post {
   private long score;
 
   public Post() {
+    timestamp = new Timestamp(System.currentTimeMillis());
   }
 
   public Post(long id, String title, String href, Timestamp timestamp, long score) {
