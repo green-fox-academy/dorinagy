@@ -1,14 +1,13 @@
-package com.greenfox.dorinagy.reddit;
+package com.greenfox.dorinagy.reddit.model;
 
-import com.greenfox.dorinagy.reddit.model.Post;
 import com.greenfox.dorinagy.reddit.service.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Nagy Dóra on 2017.05.12..
  */
+@Component
 public class PostList {
 
   private Iterable<Post> posts;
@@ -16,7 +15,7 @@ public class PostList {
   @Autowired
   PostRepository postRepository;
 
-  public void preparePostList() {
+  public void fillPostList() {
     posts = postRepository.findAll();
   }
 }
