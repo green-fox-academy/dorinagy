@@ -66,4 +66,12 @@ public class Post {
   public void setScore(long score) {
     this.score = score;
   }
+
+  public void downVote() {
+    score--;
+  }
+
+  public void upVote() {
+    score++;
+  }
 }
