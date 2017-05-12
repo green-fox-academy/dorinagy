@@ -14,11 +14,11 @@ public class PostsRestController {
 
   @Autowired
   PostRepository postRepository;
-  PostList postList;
 
   @RequestMapping(value = "/posts", method = RequestMethod.GET)
   public PostList listPosts() {
-    postList.fillPostList();
+    PostList postList = new PostList();
+    postList.setPosts(postRepository.findAll());
     return postList;
   }
 
