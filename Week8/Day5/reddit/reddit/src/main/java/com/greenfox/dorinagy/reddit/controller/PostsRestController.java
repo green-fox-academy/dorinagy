@@ -15,20 +15,20 @@ public class PostsRestController {
   @Autowired
   PostRepository postRepository;
 
-  @RequestMapping(value = "/posts", method = RequestMethod.GET)
+  @GetMapping(value = "/posts")
   public PostList listPosts() {
     PostList postList = new PostList();
     postList.setPosts(postRepository.findAll());
     return postList;
   }
 
-  @RequestMapping(value = "/posts", method = RequestMethod.POST)
+  @PostMapping(value = "/posts")
   public Post addPosts(@RequestBody Post post) {
     postRepository.save(post);
     return post;
   }
 
-  @RequestMapping(value = "/posts/{id}/downvote", method = RequestMethod.PUT)
+  @PutMapping(value = "/posts/{id}/downvote")
   public Post downvote(@PathVariable(value = "id") long id) {
     Post post = postRepository.findOne(id);
     post.downVote();
@@ -36,7 +36,7 @@ public class PostsRestController {
     return post;
   }
 
-  @RequestMapping(value = "/posts/{id}/upvote", method = RequestMethod.PUT)
+  @PutMapping(value = "/posts/{id}/upvote")
   public Post upvote(@PathVariable(value = "id") long id) {
     Post post = postRepository.findOne(id);
     post.upVote();
