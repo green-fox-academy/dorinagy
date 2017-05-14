@@ -7,9 +7,7 @@
 [Eagles-syllabus](https://github.com/greenfox-academy/eagles-syllabus)
 
 
-[dorinagy.github.io](https://github.com/dorinagy/dorinagy.github.io)
+[First website](https://github.com/dorinagy/dorinagy.github.io)
 
-
-[My firt little homepage](https://dorinagy.github.io)
 
 [Todo application](https://github.com/greenfox-academy/dorinagy-todo-app)
