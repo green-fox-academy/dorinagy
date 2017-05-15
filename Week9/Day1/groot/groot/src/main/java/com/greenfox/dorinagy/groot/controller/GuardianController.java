@@ -14,6 +14,10 @@ public class GuardianController {
 
   @Autowired
   CalorieTable calorieTable;
+  @Autowired
+  Rocket rocket;
+  @Autowired
+  FillRocket fillRocket;
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
   public ResponseMessage missingRequestParameterHandler(MissingServletRequestParameterException e) {
@@ -38,12 +42,22 @@ public class GuardianController {
 
   @GetMapping(value = "/rocket")
   public ResponseMessage cargo() {
-    return new Cargo();
+    return new Rocket();
   }
 
   @GetMapping(value = "/rocket/fill")
-  public ResponseMessage fillRocket(@RequestParam(value = "caliber") String caliber, @RequestParam(value = "amount") int amount) {
-    return new CargoStatus(caliber, amount);
+  public ResponseMessage fillRocket(@RequestParam(value = "caliber") String caliber, @RequestParam(value = "amount") Integer amount) {
+    if (caliber == null || amount == null) {
+      return new ErrorMessage("Caliber or Amount cannot be null!");
+    }
+    rocket.fillRocket(caliber, amount);
+    rocket.setCargoStatus();
+    rocket.setReady();
+    fillRocket.setReceived(caliber);
+    fillRocket.setAmount(amount);
+    fillRocket.setShipstatus(amount);
+    fillRocket.setReady();
+    return fillRocket;
   }
 
   @GetMapping(value = "/drax")
