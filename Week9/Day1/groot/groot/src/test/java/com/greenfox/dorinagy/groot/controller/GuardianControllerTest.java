@@ -72,4 +72,12 @@ public class GuardianControllerTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("error", is("I am Groot!")));
   }
+
+  @Test
+  public void yonduZeroReceivedAsExpected() throws Exception {
+    mockMvc.perform(get("/yondu").param("distance", "100.0").param("time", "0"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.error", is("Distance or Time cannot be zero!")));
+  }
 }
