@@ -2,7 +2,7 @@ package com.greenfox.dorinagy.groot.controller;
 
 import com.greenfox.dorinagy.groot.model.ErrorMessage;
 import com.greenfox.dorinagy.groot.model.Message;
-import com.greenfox.dorinagy.groot.model.ResponseMessage;
+import com.greenfox.dorinagy.groot.service.ResponseMessage;
 import com.greenfox.dorinagy.groot.model.Speed;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,8 +22,8 @@ public class GuardianController {
   }
 
   @GetMapping(value = "/groot")
-  public ResponseMessage groot(@RequestParam(value = "message") String message) {
-    if(message.equals("")) {
+  public ResponseMessage groot(@RequestParam(value = "message", required = true) String message) {
+    if (message.equals("")) {
       return new ErrorMessage("I am Groot!");
     }
     return new Message(message);
@@ -31,6 +31,7 @@ public class GuardianController {
 
   @GetMapping(value = "/yondu")
   public ResponseMessage yondu(@RequestParam(value = "distance") double distance, @RequestParam(value = "time") double time) {
+
     return new Speed(distance, time);
   }
 }
