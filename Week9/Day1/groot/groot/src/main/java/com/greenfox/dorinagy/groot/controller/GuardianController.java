@@ -31,6 +31,9 @@ public class GuardianController {
 
   @GetMapping(value = "/yondu")
   public ResponseMessage yondu(@RequestParam(value = "distance") double distance, @RequestParam(value = "time") double time) {
+    if (distance == 0 || time == 0) {
+      return new ErrorMessage("Distance or Time cannot be zero!");
+    }
     return new Speed(distance, time);
   }
 }

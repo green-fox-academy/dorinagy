@@ -60,7 +60,9 @@ public class GuardianControllerTest {
     mockMvc.perform(get("/yondu").param("distance", "100.0").param("time", "10.0"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-            .andExpect(jsonPath("$.speed", is("10.0")));
+            .andExpect(jsonPath("$.distance", is(100.0)))
+            .andExpect(jsonPath("$.time", is(10.0)))
+            .andExpect(jsonPath("$.speed", is(10.0)));
   }
 
   @Test
