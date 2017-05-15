@@ -2,10 +2,10 @@ package com.greenfox.dorinagy.groot.controller;
 
 import com.greenfox.dorinagy.groot.model.Cargo;
 import com.greenfox.dorinagy.groot.model.ErrorMessage;
-import com.greenfox.dorinagy.groot.model.Message;
-import com.greenfox.dorinagy.groot.service.CargoStatus;
+import com.greenfox.dorinagy.groot.model.Groot;
+import com.greenfox.dorinagy.groot.model.CargoStatus;
 import com.greenfox.dorinagy.groot.service.ResponseMessage;
-import com.greenfox.dorinagy.groot.model.Speed;
+import com.greenfox.dorinagy.groot.model.Arrow;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +28,7 @@ public class GuardianController {
     if (message.equals("")) {
       return new ErrorMessage("I am Groot!");
     }
-    return new Message(message);
+    return new Groot(message);
   }
 
   @GetMapping(value = "/yondu")
@@ -36,7 +36,7 @@ public class GuardianController {
     if (distance == 0 || time == 0) {
       return new ErrorMessage("Distance or Time cannot be zero!");
     }
-    return new Speed(distance, time);
+    return new Arrow(distance, time);
   }
 
   @GetMapping(value = "/rocket")

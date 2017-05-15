@@ -5,12 +5,12 @@ import com.greenfox.dorinagy.groot.service.ResponseMessage;
 /**
  * Created by Nagy Dóra on 2017.05.15..
  */
-public class Speed implements ResponseMessage {
+public class Arrow implements ResponseMessage {
   private double distance;
   private double time;
   private double speed;
 
-  public Speed(double distance, double time) {
+  public Arrow(double distance, double time) {
     this.distance = distance;
     this.time = time;
     this.speed = distance / time;
