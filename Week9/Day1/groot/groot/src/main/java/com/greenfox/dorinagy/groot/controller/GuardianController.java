@@ -14,8 +14,10 @@ public class GuardianController {
 
   @Autowired
   CalorieTable calorieTable;
+
   @Autowired
   Rocket rocket;
+
   @Autowired
   FillRocket fillRocket;
 
@@ -42,7 +44,9 @@ public class GuardianController {
 
   @GetMapping(value = "/rocket")
   public ResponseMessage cargo() {
-    return new Rocket();
+    rocket.setCargoStatus();
+    rocket.setReady();
+    return rocket;
   }
 
   @GetMapping(value = "/rocket/fill")
@@ -65,7 +69,7 @@ public class GuardianController {
     return new CalorieTable();
   }
 
-  @RequestMapping(value = "/drax/add")
+  @GetMapping(value = "/drax/add")
   public ResponseMessage addFood(@RequestParam(value = "food") String food) {
     calorieTable.addFood(food);
     return new CalorieTable();
