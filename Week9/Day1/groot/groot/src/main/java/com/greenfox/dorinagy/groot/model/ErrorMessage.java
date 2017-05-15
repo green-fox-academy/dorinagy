@@ -7,8 +7,8 @@ public class ErrorMessage implements ResponseMessage {
 
   private String error;
 
-  public ErrorMessage() {
-    this.error = "I am Groot!";
+  public ErrorMessage(String error) {
+    this.error = error;
   }
 
   public String getError() {

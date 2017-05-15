@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GrootApplication {
+public class GuardianApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GrootApplication.class, args);
+		SpringApplication.run(GuardianApplication.class, args);
 	}
 }

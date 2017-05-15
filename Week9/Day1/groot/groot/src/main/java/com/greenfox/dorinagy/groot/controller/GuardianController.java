@@ -3,6 +3,7 @@ package com.greenfox.dorinagy.groot.controller;
 import com.greenfox.dorinagy.groot.model.ErrorMessage;
 import com.greenfox.dorinagy.groot.model.Message;
 import com.greenfox.dorinagy.groot.model.ResponseMessage;
+import com.greenfox.dorinagy.groot.model.Speed;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class GuardianController {
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
-  public ResponseMessage missingRequestParameterHandler() {
-    return new ErrorMessage();
+  public ResponseMessage missingRequestParameterHandler(MissingServletRequestParameterException e) {
+    return new ErrorMessage("I am Groot!");
   }
 
   @GetMapping(value = "/groot")
   public ResponseMessage groot(@RequestParam(value = "message") String message) {
+    if(message.equals("")) {
+      return new ErrorMessage("I am Groot!");
+    }
     return new Message(message);
+  }
+
+  @GetMapping(value = "/yondu")
+  public ResponseMessage yondu(@RequestParam(value = "distance") double distance, @RequestParam(value = "time") double time) {
+    return new Speed(distance, time);
   }
 }
