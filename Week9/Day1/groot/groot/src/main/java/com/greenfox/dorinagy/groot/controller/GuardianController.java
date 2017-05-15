@@ -1,22 +1,19 @@
 package com.greenfox.dorinagy.groot.controller;
 
-import com.greenfox.dorinagy.groot.model.Cargo;
-import com.greenfox.dorinagy.groot.model.ErrorMessage;
-import com.greenfox.dorinagy.groot.model.Groot;
-import com.greenfox.dorinagy.groot.model.CargoStatus;
+import com.greenfox.dorinagy.groot.model.*;
 import com.greenfox.dorinagy.groot.service.ResponseMessage;
-import com.greenfox.dorinagy.groot.model.Arrow;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.MissingServletRequestParameterException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Nagy Dóra on 2017.05.15..
  */
 @RestController
 public class GuardianController {
+
+  @Autowired
+  CalorieTable calorieTable;
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
   public ResponseMessage missingRequestParameterHandler(MissingServletRequestParameterException e) {
@@ -47,5 +44,16 @@ public class GuardianController {
   @GetMapping(value = "/rocket/fill")
   public ResponseMessage fillRocket(@RequestParam(value = "caliber") String caliber, @RequestParam(value = "amount") int amount) {
     return new CargoStatus(caliber, amount);
+  }
+
+  @GetMapping(value = "/drax")
+  public ResponseMessage calorieTable() {
+    return new CalorieTable();
+  }
+
+  @RequestMapping(value = "/drax/add")
+  public ResponseMessage addFood(@RequestParam(value = "food") String food) {
+    calorieTable.addFood(food);
+    return new CalorieTable();
   }
 }
