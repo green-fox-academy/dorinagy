@@ -80,4 +80,15 @@ public class GuardianControllerTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("$.error", is("Distance or Time cannot be zero!")));
   }
+
+  @Test
+  public void rocketWithParameters() throws Exception {
+    mockMvc.perform(get("/rocket/fill").param("caliber", ".50").param("amount", "5000"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.received", is(".50")))
+            .andExpect(jsonPath("$.amount", is(5000)))
+            .andExpect(jsonPath("$.shipstatus", is("40%")))
+            .andExpect(jsonPath("$.ready", is(false)));
+  }
 }

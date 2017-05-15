@@ -3,7 +3,7 @@ package com.greenfox.dorinagy.groot.controller;
 import com.greenfox.dorinagy.groot.model.Cargo;
 import com.greenfox.dorinagy.groot.model.ErrorMessage;
 import com.greenfox.dorinagy.groot.model.Message;
-import com.greenfox.dorinagy.groot.service.FillRocket;
+import com.greenfox.dorinagy.groot.service.CargoStatus;
 import com.greenfox.dorinagy.groot.service.ResponseMessage;
 import com.greenfox.dorinagy.groot.model.Speed;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -46,6 +46,6 @@ public class GuardianController {
 
   @GetMapping(value = "/rocket/fill")
   public ResponseMessage fillRocket(@RequestParam(value = "caliber") String caliber, @RequestParam(value = "amount") int amount) {
-    return new FillRocket(caliber, amount);
+    return new CargoStatus(caliber, amount);
   }
 }
