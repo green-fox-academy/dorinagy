@@ -1,5 +1,6 @@
 package com.greenfox.dorinagy.groot.controller;
 
+import com.greenfox.dorinagy.groot.model.Cargo;
 import com.greenfox.dorinagy.groot.model.ErrorMessage;
 import com.greenfox.dorinagy.groot.model.Message;
 import com.greenfox.dorinagy.groot.service.ResponseMessage;
@@ -35,5 +36,10 @@ public class GuardianController {
       return new ErrorMessage("Distance or Time cannot be zero!");
     }
     return new Speed(distance, time);
+  }
+
+  @GetMapping(value = "/rocket")
+  public ResponseMessage cargo() {
+    return new Cargo();
   }
 }
