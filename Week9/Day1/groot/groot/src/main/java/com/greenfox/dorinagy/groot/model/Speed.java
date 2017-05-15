@@ -23,4 +23,8 @@ public class Speed implements ResponseMessage {
   public double getTime() {
     return time;
   }
+
+  public double getSpeed() {
+    return speed;
+  }
 }

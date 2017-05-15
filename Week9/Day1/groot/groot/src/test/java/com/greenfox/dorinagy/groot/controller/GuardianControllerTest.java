@@ -28,30 +28,46 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @EnableWebMvc
 public class GuardianControllerTest {
 
-    private MockMvc mockMvc;
+  private MockMvc mockMvc;
 
-    @Autowired
-    private WebApplicationContext webApplicationContext;
+  @Autowired
+  private WebApplicationContext webApplicationContext;
 
-    @Before
-    public void setup() throws Exception {
-      this.mockMvc = webAppContextSetup(webApplicationContext).build();
-    }
+  @Before
+  public void setup() throws Exception {
+    this.mockMvc = webAppContextSetup(webApplicationContext).build();
+  }
 
-    @Test
-    public void grootWithMessage() throws Exception {
-      mockMvc.perform(get("/groot").param("message", "somemessage"))
-              .andExpect(status().isOk())
-              .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-              .andExpect(jsonPath("$.received", is("somemessage")))
-              .andExpect(jsonPath("$.translated", is("I am Groot!")));
-    }
+  @Test
+  public void grootWithMessage() throws Exception {
+    mockMvc.perform(get("/groot").param("message", "somemessage"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.received", is("somemessage")))
+            .andExpect(jsonPath("$.translated", is("I am Groot!")));
+  }
 
-    @Test
-    public void grootWithoutMessage() throws Exception {
-      mockMvc.perform(get("/groot"))
-              .andExpect(status().isOk())
-              .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-              .andExpect(jsonPath("$.error", is("I am Groot!")));
-    }
+  @Test
+  public void grootWithoutMessage() throws Exception {
+    mockMvc.perform(get("/groot"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.error", is("I am Groot!")));
+  }
+
+  @Test
+  public void yonduWithParameters() throws Exception {
+    mockMvc.perform(get("/yondu").param("distance", "100.0").param("time", "10.0"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.speed", is("10.0")));
+  }
+
+  @Test
+  public void yonduWithoutParameters() throws Exception {
+    mockMvc.perform(get("/yondu"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("error", is("I am Groot!")));
+  }
 }

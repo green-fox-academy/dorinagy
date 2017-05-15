@@ -31,7 +31,6 @@ public class GuardianController {
 
   @GetMapping(value = "/yondu")
   public ResponseMessage yondu(@RequestParam(value = "distance") double distance, @RequestParam(value = "time") double time) {
-
     return new Speed(distance, time);
   }
 }
