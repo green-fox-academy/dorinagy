@@ -14,7 +14,7 @@ public class Fox {
   private String drink;
 
   public Fox() {
-    this.name = "Mr Fox";
+    this.name = "Miss Sloth";
     listOfTricks = new ArrayList<>();
     this.food = "Apple";
     this.drink = "Water";

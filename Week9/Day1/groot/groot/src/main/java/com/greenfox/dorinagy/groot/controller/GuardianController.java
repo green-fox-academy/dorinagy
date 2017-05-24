@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by Nagy Dóra on 2017.05.15..
  */
 @RestController
 public class GuardianController {
+
+  List<Food> foodList;
 
   @Autowired
   CalorieTable calorieTable;
@@ -66,12 +70,14 @@ public class GuardianController {
 
   @GetMapping(value = "/drax")
   public ResponseMessage calorieTable() {
-    return new CalorieTable();
+    return calorieTable;
   }
 
   @GetMapping(value = "/drax/add")
   public ResponseMessage addFood(@RequestParam(value = "food") String food) {
+    //foodList.add(new Food(food));
+    calorieTable.setFoodList(foodList);
     calorieTable.addFood(food);
-    return new CalorieTable();
+    return calorieTable;
   }
 }

@@ -16,12 +16,14 @@
         <a th:href="@{'/trickCenter'}">Trick Center</a>
     </li>
 </ul>
-<img src="afox.gif"/>
+<img src="sloth.gif"/>
 <p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He Knows ' + ${fox.getTrickListSize()} + ' tricks.'"></p>
 <h1>Know tricks</h1>
 <p th:if="${fox.getTrickListSize()} == 0" th:text="'You know zero tricks. Go and learn some'"></p>
+
 <ul>
     <li th:each="trickElement : ${fox.getTrickList()}" th:text="${trickElement}"></li>
 </ul>
+
 </body>
 </html>
