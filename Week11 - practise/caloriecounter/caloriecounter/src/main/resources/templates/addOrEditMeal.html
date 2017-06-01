@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add or Edit Meal</title>
+    <link href="../webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<h1>Add or Edit Meal</h1>
+
+<form action="/edit" method="post" th:object="${meals}">
+    <input type="date" th:field="*{date}"/>
+    <input type="text" th:field="*{type}"/>
+    <input type="number" th:field="*{calories}"/>
+    <input type="text" th:field="*{date}"/>
+    <input type="submit" value="save"/>
+    <input/>
+</form>
+
+<script src="../webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="../webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

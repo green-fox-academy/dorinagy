@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>Calorie Counter</title>
+    <link href="../webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="container-fluid">
 
+    <h1>Calorie Counter</h1>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <div>
+                <p>number of meals</p>
+                <p>total calories</p>
+                <a th:href="@{'/'}">Add new meal</a>
+            </div>
+
+            <p></p>
+
+            <table class="table-striped table-hover">
+                <tr>Meal Date</tr>
+                <tr>Type</tr>
+                <tr>Description</tr>
+                <tr>Calories</tr>
+                <tr>Edit</tr>
+                <tr>Delete</tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <script src="../webjars/jquery/1.11.1/jquery.min.js"></script>
+            <script src="../webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+</div>
 </body>
 </html>

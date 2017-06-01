@@ -1,11 +1,19 @@
 package com.greenfox.dorinagy.caloriecounter.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Date;
 
 /**
  * Created by Nagy Dóra on 2017.06.01..
  */
+@Entity
 public class Meal {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int id;
   private Date date;
   private String type;
   private String description;
@@ -51,5 +59,13 @@ public class Meal {
 
   public void setCalories(int calories) {
     this.calories = calories;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 }
