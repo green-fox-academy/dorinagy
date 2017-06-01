@@ -1,4 +1,4 @@
-package com.greenfox.dorinagy.caloriecounter;
+package com.greenfox.dorinagy.caloriecounter.repository;
 
 import com.greenfox.dorinagy.caloriecounter.model.Meal;
 import org.springframework.data.repository.CrudRepository;

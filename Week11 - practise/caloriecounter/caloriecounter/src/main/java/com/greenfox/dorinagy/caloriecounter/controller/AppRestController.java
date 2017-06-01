@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppRestController {
 
-  @GetMapping(value = "/edit")
-  public String addOrEditMeal() {
-    return "addOrEditMeal";
-  }
+  //@GetMapping(value = "/get")
+  //public
 
 
 }

@@ -1,6 +1,9 @@
 package com.greenfox.dorinagy.caloriecounter.controller;
 
+import com.greenfox.dorinagy.caloriecounter.repository.MealRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -9,8 +12,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-  @GetMapping
-  public String homePage() {
-  return "index";
-}
+  @Autowired
+  MealRepository meals;
+
+  @GetMapping(value = "/")
+  public String homePage(Model model) {
+    model.addAttribute("meals", meals.findAll());
+    return "index";
+  }
+
+  @GetMapping(value = "/edit")
+  public String addOrEditMeal(Model model) {
+    return "addOrEditMeal";
+  }
 }
