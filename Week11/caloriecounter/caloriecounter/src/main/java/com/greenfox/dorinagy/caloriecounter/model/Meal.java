@@ -1,9 +1,8 @@
 package com.greenfox.dorinagy.caloriecounter.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.sql.Date;
 
 /**
@@ -14,7 +13,11 @@ public class Meal {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
+  @Temporal(TemporalType.DATE)
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date date;
+  
   private String type;
   private String description;
   private int calories;

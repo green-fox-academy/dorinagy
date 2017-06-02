@@ -9,17 +9,17 @@ import javax.persistence.Id;
  * Created by Nagy Dóra on 2017.06.01..
  */
 @Entity
-public class Type {
+public class MealType {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
   private String type;
 
-  public Type() {
+  public MealType() {
   }
 
-  public Type(String type) {
+  public MealType(String type) {
     this.type = type;
   }
 

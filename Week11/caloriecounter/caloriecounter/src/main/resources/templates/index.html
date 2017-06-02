@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Calorie Counter</title>
+    <link href="../webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+
+    <h1>Calorie Counter</h1>
+
+    <div>
+        <p>number of meals</p>
+        <p>total calories</p>
+        <a th:href="@{'/edit'}">Add new meal</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-0"></div>
+        <div class="col-md-6">
+
+            <p></p>
+
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Meal Date</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Calories</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+
+                <tr th:each="meal : ${meals}">
+                    <td th:text="${meal.getDate()}">date</td>
+                    <td th:text="${meal.getType()}">type</td>
+                    <td th:text="${meal.getDescription()}">description</td>
+                    <td th:text="${meal.getCalories()}">calories</td>
+                    <td>edit</td>
+                    <td>delete</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<script src="../webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="../webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>
