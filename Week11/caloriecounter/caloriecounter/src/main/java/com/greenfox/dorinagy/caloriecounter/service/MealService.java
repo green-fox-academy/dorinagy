@@ -26,9 +26,9 @@ public class MealService {
     mealRepository.delete(id);
   }
 
-  public int sumCalories() {
+  public int sumCalories(Iterable<Meal> meals) {
     int sumCalories = 0;
-    Iterable<Meal> meals = mealRepository.findAll();
+    meals = mealRepository.findAll();
     for(Meal meal : meals) {
       sumCalories += meal.getCalories();
     }

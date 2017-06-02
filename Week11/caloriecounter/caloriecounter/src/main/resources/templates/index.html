@@ -35,7 +35,7 @@
 
                 <tr th:each="meal : ${meals}">
                     <td th:text="${meal.getDate()}">date</td>
-                    <td th:text="${meal.getType()}">type</td>
+                    <td th:text="${meal.getMealType()}">type</td>
                     <td th:text="${meal.getDescription()}">description</td>
                     <td th:text="${meal.getCalories()}">calories</td>
                     <td><a th:href="@{'/edit/{id}'(id=${meal.getId()})}" class="glyphicon glyphicon-pencil"></a></td>

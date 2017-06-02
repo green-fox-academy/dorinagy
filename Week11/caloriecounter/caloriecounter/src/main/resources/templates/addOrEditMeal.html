@@ -9,24 +9,38 @@
 
 <h1>Add or Edit Meal</h1>
 
-<form action="/add" method="post" th:object="${meal}">
-    <label th:text="'Date: '"></label>
-    <input type="date" th:field="*{date}"/>
-    <label th:text="'Type: '"></label>
-    <select th:field="*{mealType}">
-        <option th:each="mealtype : ${mealtypes}"
-                th:value="${mealtype.getMealType()}"
-                th:text="${mealtype.getMealType()}">
-        </option>
-    </select>
-    <label th:text="'Description: '"></label>
-    <input type="text" th:field="*{description}"/>
-    <label th:text="'Calories: '"></label>
-    <input type="number" th:field="*{calories}"/>
-    <input th:if="*{id} != null" type="hidden" th:field="*{id}"/>
-    <input class="btn btn-success" type="submit" th:value="Save"/>
-    <a th:href="@{/}" class="btn btn-danger" th:text="Cancel"/>
-</form>
+<table>
+    <form action="/add" method="post" th:object="${meal}">
+        <tr>
+            <td><label th:text="'Date: '"></label></td>
+            <td><input type="date" th:field="*{date}"/></td>
+        </tr>
+        <tr>
+            <td><label th:text="'Type: '"></label></td>
+            <td><select th:field="*{mealType}">
+                <option th:each="mealtype : ${mealtypes}"
+                        th:value="${mealtype.getMealType()}"
+                        th:text="${mealtype.getMealType()}">
+                </option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label th:text="'Description: '"></label></td>
+            <td><input type="text" th:field="*{description}"/></td>
+        </tr>
+        <tr>
+            <td><label th:text="'Calories: '"></label></td>
+            <td><input type="number" th:field="*{calories}"/></td>
+        </tr>
+        <tr>
+            <td><input th:if="*{id} != null" type="hidden" th:field="*{id}"/></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-success" type="submit" th:value="Save"/>
+                <a th:href="@{/}" class="btn btn-danger" th:text="Cancel"/></td>
+        </tr>
+    </form>
+</table>
 
 <script src="../webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="../webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>

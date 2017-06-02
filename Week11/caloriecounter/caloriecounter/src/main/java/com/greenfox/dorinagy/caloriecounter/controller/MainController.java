@@ -29,7 +29,7 @@ public class MainController {
   @GetMapping(value = "/")
   public String homePage(Model model) {
     model.addAttribute("meals", mealRepository.findAll());
-    model.addAttribute("sumOfCalories", mealService.sumCalories());
+    model.addAttribute("sumOfCalories", mealService.sumCalories(mealRepository.findAll()));
     return "index";
   }
 
