@@ -18,6 +18,14 @@ public class MealService {
   @Autowired
   MealTypeRepository mealTypeRepository;
 
+  public void addNewMeal(Meal meal){
+    mealRepository.save(meal);
+  }
+
+  public void deleteMeal(long id) {
+    mealRepository.delete(id);
+  }
+
   public int sumCalories() {
     int sumCalories = 0;
     Iterable<Meal> meals = mealRepository.findAll();
