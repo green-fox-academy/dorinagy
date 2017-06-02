@@ -14,6 +14,7 @@ public class MealType {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
   private String type;
 
   public MealType() {
