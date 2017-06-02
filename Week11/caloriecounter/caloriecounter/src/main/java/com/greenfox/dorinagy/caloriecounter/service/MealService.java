@@ -18,10 +18,6 @@ public class MealService {
   @Autowired
   MealTypeRepository mealTypeRepository;
 
-  public long sumMeals() {
-    return mealRepository.count();
-  }
-
   public int sumCalories() {
     int sumCalories = 0;
     Iterable<Meal> meals = mealRepository.findAll();

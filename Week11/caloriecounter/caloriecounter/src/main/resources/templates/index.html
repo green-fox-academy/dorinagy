@@ -11,8 +11,9 @@
     <h1>Calorie Counter</h1>
 
     <div>
-        <p>number of meals</p>
-        <p>total calories</p>
+        <p th:text="|number of meals: ${meals.size()}|"></p>
+        <p th:text="|total calories: ${sumOfCalories}|"></p>
+
         <a th:href="@{'/add'}">Add new meal</a>
     </div>
 

@@ -3,7 +3,7 @@ package com.greenfox.dorinagy.caloriecounter.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by Nagy Dóra on 2017.06.01..
