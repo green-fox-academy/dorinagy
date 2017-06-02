@@ -9,13 +9,23 @@
 
 <h1>Add or Edit Meal</h1>
 
-<form action="/edit" method="post" th:object="${meals}">
+<form action="/add" method="post" th:object="${meal}">
+    <label th:text="'Date: '"></label>
     <input type="date" th:field="*{date}"/>
-    <input type="text" th:field="*{type}"/>
+    <label th:text="'Type: '"></label>
+    <select th:field="*{mealType}">
+        <option th:each="mealtype : ${mealtypes}"
+                th:value="${mealtype.getMealType()}"
+                th:text="${mealtype.getMealType()}">
+        </option>
+    </select>
+    <label th:text="'Description: '"></label>
+    <input type="text" th:field="*{description}"/>
+    <label th:text="'Calories: '"></label>
     <input type="number" th:field="*{calories}"/>
-    <input type="text" th:field="*{date}"/>
-    <input type="submit" value="save"/>
-    <input/>
+    <input th:if="*{id} != null" type="hidden" th:field="*{id}"/>
+    <input class="btn btn-success" type="submit" th:value="Save"/>
+    <a th:href="@{/}" class="btn btn-danger" th:text="Cancel"/>
 </form>
 
 <script src="../webjars/jquery/1.11.1/jquery.min.js"></script>

@@ -38,8 +38,8 @@
                     <td th:text="${meal.getType()}">type</td>
                     <td th:text="${meal.getDescription()}">description</td>
                     <td th:text="${meal.getCalories()}">calories</td>
-                    <td><a th:href="@{'/edit/{id}'(id=${meal.getId()})}" class="glyphicon glyphicon-pencil">edit</a></td>
-                    <td><a th:href="@{'/delete/{id}'(id=${meal.getId()})}" class="glyphicon glyphicon-trash">delete</a></td>
+                    <td><a th:href="@{'/edit/{id}'(id=${meal.getId()})}" class="glyphicon glyphicon-pencil"></a></td>
+                    <td><a th:href="@{'/delete/{id}'(id=${meal.getId()})}" class="glyphicon glyphicon-trash"></a></td>
                 </tr>
             </table>
 

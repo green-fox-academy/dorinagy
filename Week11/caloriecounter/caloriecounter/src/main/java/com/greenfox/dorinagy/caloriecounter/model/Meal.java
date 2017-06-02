@@ -18,16 +18,16 @@ public class Meal {
   @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date date;
   
-  private String type;
+  private String mealType;
   private String description;
   private int calories;
 
   public Meal() {
   }
 
-  public Meal(Date date, String type, String description, int calories) {
+  public Meal(Date date, String mealType, String description, int calories) {
     this.date = date;
-    this.type = type;
+    this.mealType = mealType;
     this.description = description;
     this.calories = calories;
   }
@@ -40,12 +40,12 @@ public class Meal {
     this.date = date;
   }
 
-  public String getType() {
-    return type;
+  public String getMealType() {
+    return mealType;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setMealType(String type) {
+    this.mealType = mealType;
   }
 
   public String getDescription() {

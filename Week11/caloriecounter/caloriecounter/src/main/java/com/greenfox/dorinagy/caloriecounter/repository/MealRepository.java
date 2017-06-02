@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  * Created by Nagy Dóra on 2017.06.01..
  */
 public interface MealRepository extends CrudRepository<Meal, Long> {
+  Meal findById(long id);
 }

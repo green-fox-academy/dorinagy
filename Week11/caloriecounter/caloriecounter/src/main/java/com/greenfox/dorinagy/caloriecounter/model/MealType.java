@@ -15,13 +15,13 @@ public class MealType {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  private String type;
+  private String mealType;
 
   public MealType() {
   }
 
-  public MealType(String type) {
-    this.type = type;
+  public MealType(String mealType) {
+    this.mealType = mealType;
   }
 
   public long getId() {
@@ -32,11 +32,11 @@ public class MealType {
     this.id = id;
   }
 
-  public String getType() {
-    return type;
+  public String getMealType() {
+    return mealType;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setMealType(String mealType) {
+    this.mealType = mealType;
   }
 }
