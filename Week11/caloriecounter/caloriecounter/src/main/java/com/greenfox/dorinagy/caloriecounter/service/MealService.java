@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MealService {
 
+  int sumCalories;
+  long numOfMeals;
+
   @Autowired
   MealRepository mealRepository;
 
@@ -26,12 +29,23 @@ public class MealService {
     mealRepository.delete(id);
   }
 
+  public long numOfMeals() {
+    numOfMeals = mealRepository.count();
+    return numOfMeals;
+  }
+
   public int sumCalories(Iterable<Meal> meals) {
-    int sumCalories = 0;
+    sumCalories = 0;
     meals = mealRepository.findAll();
     for(Meal meal : meals) {
       sumCalories += meal.getCalories();
     }
     return sumCalories;
+  }
+
+  @Override
+  public String toString() {
+    String stats = "";
+    return stats;
   }
 }
