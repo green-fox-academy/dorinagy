@@ -3,6 +3,8 @@ package com.greenfox.dorinagy.caloriecounter.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -16,10 +18,16 @@ public class Meal {
 
   @Temporal(TemporalType.DATE)
   @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @NotNull(message = "The date field is empty.")
   private Date date;
-  
+
+  @NotNull(message = "The meal type field is empty. ")
   private String mealType;
+
   private String description;
+
+  @NotNull(message = "The calories field is empty.")
+  @Min(value = 1, message = "The calories field is empty.")
   private int calories;
 
   public Meal() {
