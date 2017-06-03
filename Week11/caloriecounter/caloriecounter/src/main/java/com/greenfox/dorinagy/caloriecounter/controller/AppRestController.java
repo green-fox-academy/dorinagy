@@ -4,9 +4,12 @@ import com.greenfox.dorinagy.caloriecounter.model.Meal;
 import com.greenfox.dorinagy.caloriecounter.repository.MealRepository;
 import com.greenfox.dorinagy.caloriecounter.service.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.HashMap;
 
 /**
  * Created by Nagy Dóra on 2017.06.01..
@@ -23,5 +26,25 @@ public class AppRestController {
   @GetMapping(value = "/getmeals")
   public Iterable<Meal> meals() {
     return mealRepository.findAll();
+  }
+
+  @GetMapping("/getstats")
+  public HashMap<String, Integer> getStats() {
+    return mealService.stats();
+  }
+
+  @PostMapping("/meal")
+  public ResponseEntity addNewMealJson(@Valid @RequestBody Meal meal, BindingResult bindingResult) {
+    return mealService.saveMealJson(meal, bindingResult);
+  }
+
+  @PutMapping("/meal")
+  public ResponseEntity editMealJson(@Valid @RequestBody Meal meal, BindingResult bindingResult) {
+    return mealService.saveMealJson(meal, bindingResult);
+  }
+
+  @DeleteMapping("/meal")
+  public ResponseEntity deleteMealJson(@RequestBody Meal meal) {
+    return mealService.deleteMealJson(meal.getId());
   }
 }
