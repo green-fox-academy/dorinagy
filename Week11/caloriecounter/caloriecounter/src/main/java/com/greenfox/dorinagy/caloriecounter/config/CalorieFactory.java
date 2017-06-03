@@ -1,4 +1,4 @@
-package com.greenfox.dorinagy.caloriecounter;
+package com.greenfox.dorinagy.caloriecounter.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
