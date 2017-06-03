@@ -1,15 +1,16 @@
 package com.greenfox.dorinagy.caloriecounter.controller;
 
 import com.greenfox.dorinagy.caloriecounter.model.Meal;
-import com.greenfox.dorinagy.caloriecounter.repository.MealRepository;
-import com.greenfox.dorinagy.caloriecounter.repository.MealTypeRepository;
 import com.greenfox.dorinagy.caloriecounter.service.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 /**
  * Created by Nagy Dóra on 2017.06.01..
@@ -18,33 +19,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
   @Autowired
-  MealRepository mealRepository;
-
-  @Autowired
-  MealTypeRepository mealTypeRepository;
-
-  @Autowired
   MealService mealService;
 
   @GetMapping(value = "/")
-  public String homePage(Model model) {
-    model.addAttribute("meals", mealRepository.findAll());
-    model.addAttribute("sumOfCalories", mealService.sumCalories(mealRepository.findAll()));
-    return "index";
+  public ModelAndView homePage() {
+    return mealService.setIndexPage();
   }
 
   @PostMapping(value = "/add")
-  public String setCalorieTable(Model model, Meal meal) {
-    mealService.addNewMeal(meal);
-    model.addAttribute("meals", mealRepository.findAll());
-    return "index";
+  public ModelAndView setCalorieTable(@Valid Meal meal, BindingResult bindingResult) {
+    return mealService.saveMeal(meal, bindingResult);
   }
 
   @GetMapping(value = "/add")
-  public String addMeal(Model model) {
-    model.addAttribute("meal", new Meal());
-    model.addAttribute("mealtypes", mealTypeRepository.findAll());
-    return "addOrEditMeal";
+  public ModelAndView addNewMeal() {
+    return mealService.addNewMeal();
   }
 
   @GetMapping("/delete/{id}")
@@ -54,10 +43,7 @@ public class MainController {
   }
 
   @GetMapping("/edit/{id}")
-  public String editMeal(Model model, @PathVariable long id) {
-    Meal meal = mealRepository.findById(id);
-    model.addAttribute("meal", meal);
-    model.addAttribute("mealtypes", mealTypeRepository.findAll());
-    return "addOrEditMeal";
+  public ModelAndView editMeal(@PathVariable long id) {
+    return mealService.editMeal(id);
   }
 }
