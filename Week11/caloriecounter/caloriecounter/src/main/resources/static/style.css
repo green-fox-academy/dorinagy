@@ -3,5 +3,10 @@ body {
     background-repeat: no-repeat;
     background-size:contain;
     background-position: bottom right;
-    background-color: moccasin;
+    background-color: beige;
+    font-family: "Calibri Light", sans-serif;
+}
+
+.table-hover>tbody>tr:not(:first-child):hover {
+    background-color: darkseagreen;
 }
