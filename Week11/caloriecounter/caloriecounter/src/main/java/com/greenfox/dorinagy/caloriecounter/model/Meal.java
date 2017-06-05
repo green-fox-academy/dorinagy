@@ -33,8 +33,8 @@ public class Meal {
   public Meal() {
   }
 
-  public Meal(Date date, String mealType, String description, int calories) {
-    this.date = date;
+  public Meal(String mealType, String description, int calories) {
+    this.date = new Date();
     this.mealType = mealType;
     this.description = description;
     this.calories = calories;

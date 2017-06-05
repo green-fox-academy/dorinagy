@@ -1,6 +1,7 @@
 package com.greenfox.dorinagy.caloriecounter.service;
 
 import com.greenfox.dorinagy.caloriecounter.model.Meal;
+import com.greenfox.dorinagy.caloriecounter.model.Stats;
 import com.greenfox.dorinagy.caloriecounter.model.Status;
 import com.greenfox.dorinagy.caloriecounter.repository.MealRepository;
 import com.greenfox.dorinagy.caloriecounter.repository.MealTypeRepository;
@@ -29,9 +30,12 @@ public class MealService {
   @Autowired
   ModelAndView modelAndView;
 
+  @Autowired
+  Stats stats;
+
   public ModelAndView setIndexPage() {
     modelAndView.addObject("meals", mealRepository.findAll());
-    modelAndView.addObject("sumOfCalories", sumCalories());
+    modelAndView.addObject("calories", stats.countCalories(mealRepository.findAll()));
     modelAndView.setViewName("index");
     return modelAndView;
   }
@@ -79,13 +83,6 @@ public class MealService {
     return new ResponseEntity(new Status("ok"), HttpStatus.OK);
   }
 
-  public HashMap<String, Integer> stats() {
-    HashMap<String, Integer> statMap = new HashMap<>();
-    statMap.put("Number of meals", numberOfMeals());
-    statMap.put("Total calories", sumCalories());
-    return statMap;
-  }
-
   public int sumCalories() {
     int sumCalories = 0;
     for (Meal meal : mealRepository.findAll()) {
@@ -95,6 +92,7 @@ public class MealService {
   }
 
   public int numberOfMeals() {
-    return (int) mealRepository.findAll().spliterator().getExactSizeIfKnown();
+    int numberOfMeals = (int) mealRepository.findAll().spliterator().getExactSizeIfKnown();
+    return numberOfMeals;
   }
 }

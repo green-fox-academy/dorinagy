@@ -1,6 +1,7 @@
 package com.greenfox.dorinagy.caloriecounter.controller;
 
 import com.greenfox.dorinagy.caloriecounter.model.Meal;
+import com.greenfox.dorinagy.caloriecounter.model.Stats;
 import com.greenfox.dorinagy.caloriecounter.repository.MealRepository;
 import com.greenfox.dorinagy.caloriecounter.service.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class AppRestController {
   }
 
   @GetMapping("/getstats")
-  public HashMap<String, Integer> getStats() {
-    return mealService.stats();
+  public Stats getStats() {
+    return new Stats(mealRepository.findAll());
   }
 
   @PostMapping("/meal")
