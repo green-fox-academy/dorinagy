@@ -26,7 +26,7 @@ public class GuardianController {
   FillRocket fillRocket;
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
-  public ResponseMessage missingRequestParameterHandler(MissingServletRequestParameterException e) {
+  public ResponseMessage missingRequestParameterHandler() {
     return new ErrorMessage("I am Groot!");
   }
 
@@ -39,7 +39,7 @@ public class GuardianController {
   }
 
   @GetMapping(value = "/yondu")
-  public ResponseMessage yondu(@RequestParam(value = "distance") double distance, @RequestParam(value = "time") double time) {
+  public ResponseMessage calculateSpeed(@RequestParam(value = "distance") double distance, @RequestParam(value = "time") double time) {
     if (distance == 0 || time == 0) {
       return new ErrorMessage("Distance or Time cannot be zero!");
     }
