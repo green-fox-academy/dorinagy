@@ -1,13 +1,10 @@
 package com.greenfox.dorinagy.caloriecounter.controller;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.greenfox.dorinagy.caloriecounter.CaloriecounterApplication;
 import com.greenfox.dorinagy.caloriecounter.model.Meal;
-import com.greenfox.dorinagy.caloriecounter.repository.MealRepository;
-import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +18,6 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.nio.charset.Charset;
-import java.util.Date;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
