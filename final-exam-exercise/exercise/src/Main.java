@@ -6,7 +6,7 @@ public class Main {
     System.out.println(getBiggestOfSecondElements(inputArray));
   }
 
-  public static int getBiggestOfSecondElements(int[] intArray) {
+  private static int getBiggestOfSecondElements(int[] intArray) {
     int max = 0;
     for (int i = 1; i <= intArray.length; i += 2) {
       if (intArray[i] > max) {
