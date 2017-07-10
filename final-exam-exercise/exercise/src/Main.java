@@ -3,7 +3,7 @@ public class Main {
 
   public static void main(String[] args) {
     int[] inputArray = {1, 3, 8, 6, 7, 4};
-    System.out.println(getBiggestOfSecondElements(inputArray));
+    getBiggestOfSecondElements(inputArray);
   }
 
   public static int getBiggestOfSecondElements(int[] intArray) {
