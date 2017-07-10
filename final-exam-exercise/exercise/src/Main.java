@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -9,14 +7,10 @@ public class Main {
   }
 
   public static int getBiggestOfSecondElements(int[] intArray) {
-    List<Integer> secondElements = new ArrayList<>();
     int max = 0;
     for (int i = 1; i <= intArray.length; i += 2) {
-      secondElements.add(intArray[i]);
-    }
-    for (int j = 0; j < secondElements.size(); j++) {
-      if (secondElements.get(j) > max) {
-        max = secondElements.get(j);
+      if (intArray[i] > max) {
+        max = intArray[i];
       }
     }
     System.out.println(max);
