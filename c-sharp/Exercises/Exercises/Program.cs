@@ -46,5 +46,25 @@ namespace Exercises
                 return fibonacci(n - 1) + fibonacci(n - 2);
             }
         }
+
+        public Dictionary<char, int> Count(string inputString)
+        {
+            Dictionary<char, int> countedLetters = new Dictionary<char, int>();
+
+            foreach (Char letter in inputString.ToCharArray())
+            {
+                char value = Char.ToLower(letter);
+                if (countedLetters.ContainsKey(value))
+                {
+                    countedLetters[value] = countedLetters[value] + 1;
+                }
+                else
+                {
+                    countedLetters.Add(value, 1);
+                }
+            }
+
+            return countedLetters;
+        }
     }
 }

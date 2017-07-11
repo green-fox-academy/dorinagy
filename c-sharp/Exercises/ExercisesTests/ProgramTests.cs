@@ -11,16 +11,41 @@ namespace Exercises.Tests
     [TestClass()]
     public class ProgramTests
     {
+
+        Dictionary<char, int> characterOccurence;
+
         [TestMethod()]
         public void IsAnagramTest()
         {
             Assert.IsTrue(Program.IsAnagram("alma", "lama"));
         }
 
-        [TestMethod()]
-        public void fibonacciTest()
+       
+        [TestMethod]
+        public void TestCorrectNumber()
         {
-            Assert.Fail();
+            Assert.AreEqual(8, Program.fibonacci(6));
+        }
+
+        [TestMethod]
+        public void TestZero()
+        {
+            Assert.AreEqual(0, Program.fibonacci(0));
+        }
+
+        [TestMethod]
+        public void TestNegative()
+        {
+            Assert.AreEqual(0, Program.fibonacci(-2));
+        }
+
+        [TestMethod]
+        public void TestCountLetters()
+        {
+            Program program = new Program();
+            characterOccurence = program.Count("Greenfox");
+
+            Assert.AreEqual(2, characterOccurence['e']);
         }
     }
 }
