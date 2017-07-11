@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FCE89E66-06F5-4448-BFF3-C638F163D4D3}</ProjectGuid>
+    <ProjectGuid>{E183D243-5FAA-4D66-88DC-A07A53915FE0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>anagram</RootNamespace>
     <AssemblyName>anagram</AssemblyName>
