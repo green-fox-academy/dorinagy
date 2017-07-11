@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 namespace Exercises.Tests
 {
     [TestClass()]
-    public class AnagramTests
+    public class ProgramTests
     {
-      
         [TestMethod()]
         public void IsAnagramTest()
         {
-            Assert.IsTrue(Program.IsAnagram("", ""));
+            Assert.IsTrue(Program.IsAnagram("alma", "lama"));
+        }
+
+        [TestMethod()]
+        public void fibonacciTest()
+        {
+            Assert.Fail();
         }
     }
 }
